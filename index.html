@@ -1,0 +1,3705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ============Home==============  -->
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>Elite Signals | Precision Forex & Gold Trading Signals</title>
+
+        <!-- Lucide Icons -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Google Fonts + Smooth Inter Font -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+          rel="stylesheet"
+        />
+
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family:
+              "Inter",
+              "Segoe UI",
+              system-ui,
+              -apple-system,
+              sans-serif;
+            background: #0a0a0a;
+            overflow-x: hidden;
+          }
+
+          /* animated gradient bg + noise texture */
+          .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%;
+            background: radial-gradient(
+              ellipse at 30% 40%,
+              #121212 0%,
+              #030303 100%
+            );
+            color: #fff;
+            flex-wrap: wrap;
+            isolation: isolate;
+            overflow: hidden;
+          }
+
+          /* animated orbs */
+          .orb-1,
+          .orb-2,
+          .orb-3 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+          }
+
+          .orb-1 {
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(
+              circle,
+              rgba(212, 175, 55, 0.4),
+              rgba(0, 0, 0, 0)
+            );
+            top: -20%;
+            left: -10%;
+            animation: floatOrb 18s infinite alternate ease-in-out;
+          }
+
+          .orb-2 {
+            width: 45vw;
+            height: 45vw;
+            background: radial-gradient(
+              circle,
+              rgba(245, 227, 164, 0.25),
+              rgba(0, 0, 0, 0)
+            );
+            bottom: -15%;
+            right: -5%;
+            animation: floatOrb 22s infinite alternate-reverse;
+          }
+
+          .orb-3 {
+            width: 30vw;
+            height: 30vw;
+            background: radial-gradient(
+              circle,
+              rgba(250, 228, 115, 0.2),
+              rgba(0, 0, 0, 0)
+            );
+            top: 40%;
+            left: 40%;
+            animation: pulseOrb 14s infinite alternate;
+          }
+
+          @keyframes floatOrb {
+            0% {
+              transform: translate(0, 0) scale(1);
+            }
+            100% {
+              transform: translate(5%, 8%) scale(1.1);
+            }
+          }
+
+          @keyframes pulseOrb {
+            0% {
+              opacity: 0.15;
+              transform: scale(1);
+            }
+            100% {
+              opacity: 0.35;
+              transform: scale(1.2);
+            }
+          }
+
+          /* LEFT CONTENT */
+          .hero-content {
+            max-width: 620px;
+            position: relative;
+            z-index: 2;
+            animation: fadeSlideUp 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+          }
+
+          .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.12);
+            backdrop-filter: blur(8px);
+            border: 0.5px solid rgba(212, 175, 55, 0.3);
+            padding: 6px 16px 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #fae473;
+            margin-bottom: 24px;
+            width: fit-content;
+          }
+
+          .badge i {
+            width: 16px;
+            height: 16px;
+            color: #d4af37;
+          }
+
+          .hero h1 {
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+          }
+
+          .gradient-text {
+            background: linear-gradient(
+              135deg,
+              #f9e7b3,
+              #d4af37,
+              #f9d976,
+              #e4b641
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+          }
+
+          .hero p {
+            color: #cbcbcb;
+            line-height: 1.65;
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+            max-width: 540px;
+          }
+
+          /* BUTTON GROUP */
+          .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 48px;
+          }
+
+          .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 32px;
+            background: linear-gradient(105deg, #e6c45e, #d4af37, #c9a52c);
+            color: #0a0a0a;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+            border: none;
+            cursor: pointer;
+          }
+
+          .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -10px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(105deg, #f0cf6c, #e0bc48, #dcb23c);
+          }
+
+          .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 26px;
+            background: rgba(20, 20, 25, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fae473;
+            font-weight: 500;
+            transition: 0.25s;
+          }
+
+          .cta-secondary:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #d4af37;
+            transform: translateY(-2px);
+          }
+
+          /* STATS MODERN */
+          .stats-modern {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 28px;
+          }
+
+          .stat-item {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .stat-number {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #e6c45e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: -0.5px;
+          }
+
+          .stat-label {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #999;
+            margin-top: 6px;
+          }
+
+          /* RIGHT SIDE 3D VISUAL */
+          .hero-visual {
+            position: relative;
+            width: 460px;
+            height: 460px;
+            z-index: 2;
+            animation: fadeGlow 1.2s ease-out;
+          }
+
+          /* Main circle container with image */
+          .image-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow:
+              0 25px 45px rgba(0, 0, 0, 0.5),
+              0 0 0 2px rgba(212, 175, 55, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+          }
+
+          .image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            transition: transform 0.5s ease;
+            filter: brightness(1.05) contrast(1.05);
+          }
+
+          .hero-visual:hover .image-circle img {
+            transform: scale(1.03);
+          }
+
+          .hero-visual:hover .image-circle {
+            box-shadow:
+              0 30px 55px rgba(0, 0, 0, 0.6),
+              0 0 0 3px rgba(212, 175, 55, 0.6);
+          }
+
+          /* decorative gold ring that rotates outside image */
+          .gold-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 108%;
+            height: 108%;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.6);
+            transform: translate(-50%, -50%);
+            animation: rotateRing 24s linear infinite;
+            pointer-events: none;
+            z-index: 3;
+          }
+
+          .gold-ring::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            background: radial-gradient(circle, #fae473, #d4af37);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px #ffdf80;
+          }
+
+          @keyframes rotateRing {
+            from {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+              transform: translate(-50%, -50%) rotate(360deg);
+            }
+          }
+
+          /* Floating Cards */
+          .float-card {
+            position: absolute;
+            background: rgba(18, 18, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+            animation: floatSoft 5s infinite ease-in-out;
+            z-index: 10;
+          }
+
+          .card-icon {
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 40px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fae473;
+          }
+
+          .card-text small {
+            font-size: 11px;
+            color: #aaa;
+            font-weight: 500;
+          }
+
+          .card-text strong {
+            font-size: 15px;
+            color: white;
+            font-weight: 700;
+          }
+
+          .fc1 {
+            top: 5%;
+            left: 5%;
+            animation-delay: 0s;
+          }
+          .fc2 {
+            bottom: 12%;
+            left: -8%;
+            animation-delay: 1s;
+          }
+          .fc3 {
+            top: 30%;
+            right: -8%;
+            animation-delay: 0.8s;
+          }
+          .fc4 {
+            bottom: 20%;
+            right: 5%;
+            animation-delay: 2s;
+          }
+
+          @keyframes floatSoft {
+            0% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-12px);
+            }
+            100% {
+              transform: translateY(0px);
+            }
+          }
+
+          /* pulse dot (active status) */
+          .pulse-dot {
+            position: absolute;
+            bottom: 18%;
+            right: 20%;
+            width: 14px;
+            height: 14px;
+            background: #4caf50;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+            animation: pulseGreen 1.8s infinite;
+            z-index: 12;
+            border: 2px solid rgba(0, 0, 0, 0.4);
+          }
+
+          @keyframes pulseGreen {
+            0% {
+              transform: scale(0.9);
+              opacity: 1;
+              box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+            }
+            70% {
+              transform: scale(1.2);
+              opacity: 0.6;
+              box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+            }
+            100% {
+              transform: scale(0.9);
+              opacity: 1;
+              box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            }
+          }
+
+          /* animation keyframes */
+          @keyframes fadeSlideUp {
+            0% {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fadeGlow {
+            0% {
+              opacity: 0;
+              transform: scale(0.94);
+              filter: blur(2px);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+              filter: blur(0);
+            }
+          }
+
+          /* responsive */
+          @media (max-width: 1050px) {
+            .hero {
+              padding: 60px 6%;
+              flex-direction: column;
+              text-align: center;
+              gap: 50px;
+            }
+            .hero-content {
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            .hero h1 {
+              font-size: 46px;
+            }
+            .hero p {
+              text-align: center;
+            }
+            .button-group {
+              justify-content: center;
+            }
+            .stats-modern {
+              justify-content: center;
+            }
+            .badge {
+              margin-left: auto;
+              margin-right: auto;
+            }
+            .hero-visual {
+              width: 380px;
+              height: 380px;
+            }
+            .fc2,
+            .fc3 {
+              display: none;
+            }
+            .fc1,
+            .fc4 {
+              transform: scale(0.85);
+            }
+          }
+
+          @media (max-width: 550px) {
+            .hero h1 {
+              font-size: 36px;
+            }
+            .hero-visual {
+              width: 280px;
+              height: 280px;
+            }
+            .float-card {
+              padding: 8px 12px;
+            }
+            .card-text strong {
+              font-size: 12px;
+            }
+            .stats-modern {
+              gap: 28px;
+            }
+            .cta-primary,
+            .cta-secondary {
+              padding: 10px 22px;
+              font-size: 0.85rem;
+            }
+            .gold-ring {
+              width: 110%;
+              height: 110%;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section class="hero">
+          <!-- ambient orbs -->
+          <div class="orb-1"></div>
+          <div class="orb-2"></div>
+          <div class="orb-3"></div>
+
+          <!-- LEFT CONTENT -->
+          <div class="hero-content">
+            <div class="badge">
+              <i data-lucide="zap" style="width: 14px; height: 14px"></i>
+              <span>ELITE SIGNALS NETWORK • LIVE 24/7</span>
+            </div>
+
+            <h1>
+              Master the Markets with <br />
+              <span class="gradient-text">Elite Precision Signals</span>
+            </h1>
+
+            <p>
+              Join a community of <strong>150,000+ Smart Traders</strong> who
+              multiply their edge with real-time Forex, Gold & Crypto signals.
+              <br />
+              Get Institutional-grade analysis, high-win-rate setups, and Daily
+              market breakdowns — <strong>100% free on Telegram</strong>.
+            </p>
+
+            <div class="button-group">
+              <a
+                href="https://t.me/+f0-g1L7fg5s5OTZl"
+                class="cta-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                <i data-lucide="send" style="width: 18px; height: 18px"></i>
+                Join Telegram for Free
+              </a>
+              <!-- <a href="#" class="cta-secondary">
+            <i data-lucide="play-circle"></i>
+            Live Performance
+          </a> -->
+            </div>
+
+            <div class="stats-modern">
+              <div class="stat-item">
+                <span class="stat-number">89.7%</span>
+                <span class="stat-label">WIN RATE (MT4 VERIFIED)</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150k+</span>
+                <span class="stat-label">ACTIVE TRADERS</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">REAL-TIME SIGNALS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT VISUAL: Image inside circle + floating elements -->
+          <div class="hero-visual">
+            <!-- main image circle (exactly as requested) -->
+            <div class="image-circle">
+              <img
+                src="https://images.unsplash.com/flagged/photo-1574164908900-6275ca361157?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29uJTIwb24lMjBwaG9uZXxlbnwwfHwwfHx8MA%3D%3D"
+                alt="Trader reviewing elite signals on smartphone"
+                loading="eager"
+              />
+            </div>
+
+            <!-- rotating gold ring for extra premium effect -->
+            <div class="gold-ring"></div>
+
+            <!-- floating widgets (cards) -->
+            <div class="float-card fc1">
+              <div class="card-icon">
+                <i
+                  data-lucide="trending-up"
+                  style="width: 22px; height: 22px"
+                ></i>
+              </div>
+              <div class="card-text">
+                <small>LIVE SIGNAL</small><br />
+                <strong>GBPUSD → BUY 1.2645</strong>
+              </div>
+            </div>
+
+            <div class="float-card fc2">
+              <div class="card-icon"><i data-lucide="bar-chart-3"></i></div>
+              <div class="card-text">
+                <small>WIN RATE</small><br />
+                <strong>+89% accuracy</strong>
+              </div>
+            </div>
+
+            <div class="float-card fc3">
+              <div class="card-icon"><i data-lucide="diamond"></i></div>
+              <div class="card-text">
+                <small>GOLD XAUUSD</small><br />
+                <strong>Breakout zone</strong>
+              </div>
+            </div>
+
+            <div class="float-card fc4">
+              <div class="card-icon"><i data-lucide="clock"></i></div>
+              <div class="card-text">
+                <small>NEXT SIGNAL IN</small><br />
+                <strong>~ 12 min</strong>
+              </div>
+            </div>
+
+            <div class="pulse-dot"></div>
+          </div>
+        </section>
+
+        <script>
+          // initialize Lucide icons
+          lucide.createIcons();
+
+          // secondary button live demo
+          const secondaryBtn = document.querySelector(".cta-secondary");
+          if (secondaryBtn) {
+            secondaryBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              alert(
+                "📈 Live performance dashboard: 89.7% win rate over 1250+ trades (Jan 2025 - present). Join Telegram for full stats & proof.",
+              );
+            });
+          }
+
+          // re-run lucide on resize if needed
+          window.addEventListener("resize", () => {
+            lucide.createIcons();
+          });
+        </script>
+
+        <!-- extra style polish for image and icons -->
+        <style>
+          [data-lucide] {
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+            stroke-width: 1.8;
+          }
+          .badge [data-lucide] {
+            width: 14px;
+            height: 14px;
+          }
+          .cta-primary [data-lucide] {
+            width: 18px;
+            height: 18px;
+          }
+          .float-card [data-lucide] {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.7;
+          }
+          .image-circle {
+            transition:
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+          }
+          .hero-visual {
+            cursor: pointer;
+          }
+          a {
+            text-decoration: none;
+          }
+          ::selection {
+            background: #d4af37;
+            color: #000;
+          }
+          /* ensure image fits perfectly inside circle without distortion */
+          .image-circle {
+            background: #0a0a0a;
+          }
+          .image-circle img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        </style>
+      </body>
+    </html>
+
+    <!-- ============Home==============  -->
+    <!-- ==========About Us=========== -->
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>Gujju Forex Wala | Precision Trading & Live Markets</title>
+        <!-- Google Fonts: modern, clean, ultra-readable -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+          rel="stylesheet"
+        />
+        <!-- Font Awesome 6 (free icons) -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: #eef2f7;
+            font-family: "Inter", sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+          }
+
+          /* main container - fully responsive two-column layout */
+          .premium-layout {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            background: #ffffff;
+            flex-wrap: wrap;
+          }
+
+          /* ========= LEFT SIDE: TradingView widget FULL height & stability ========= */
+          .tv-full-side {
+            flex: 1.2;
+            background: #0b0f17; /* deep background for widget contrast */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+          }
+
+          .tv-widget-full {
+            flex: 1;
+            width: 100%;
+            padding: 2rem 2rem 2rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .tradingview-widget-container {
+            flex: 1;
+            width: 100%;
+            min-height: 550px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+            background: #00000008;
+            transition: all 0.2s;
+          }
+
+          .tradingview-widget-container__widget {
+            height: 100%;
+            width: 100%;
+          }
+
+          /* ensure iframe fully fills container without breaking */
+          .tradingview-widget-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 520px;
+            border-radius: 1rem;
+            display: block;
+          }
+
+          /* ========= RIGHT SIDE: premium white + gold highlights (#d4af37) ========= */
+          .content-clean-side {
+            flex: 1;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 2rem 2rem 0.5rem;
+            margin: 2rem 3.5rem 2rem 2rem;
+            overflow-y: auto;
+          }
+
+          /* gold utilities */
+          .gold-accent {
+            color: #d4af37;
+          }
+          .gold-gradient-text {
+            background: linear-gradient(135deg, #f5e3a4, #d4af37, #fae473);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+          }
+          .years-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #fefaf2;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #9e7b2b;
+            margin-bottom: 1.4rem;
+            width: fit-content;
+            border: 1px solid #f0db9b;
+          }
+          .brand-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.9rem;
+            color: #1f2a3e;
+          }
+          .brand-title span {
+            background: linear-gradient(135deg, #f5e3a4, #d4af37, #fae473);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+          .lead-description {
+            font-size: 1.05rem;
+            line-height: 1.45;
+            color: #2c3e4e;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+          .description-text {
+            color: #334155;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
+          }
+          .insight-quote {
+            background: #fefaf2;
+            padding: 1rem 1.3rem;
+            border-radius: 1rem;
+            margin: 1rem 0 1.2rem;
+            border-left: 4px solid #d4af37;
+            font-weight: 500;
+            color: #4a3b1c;
+            font-size: 0.9rem;
+          }
+          .instrument-focus-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0 1.8rem;
+          }
+          .instrument-card {
+            flex: 1;
+            background: #fefcf7;
+            border-radius: 1rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e9d5a1;
+            transition: all 0.2s;
+          }
+          .instrument-card i {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+          }
+          .instrument-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0.3rem 0 0.2rem;
+            color: #2d3a2c;
+          }
+          .instrument-card p {
+            font-size: 0.75rem;
+            color: #5a6e7c;
+          }
+          /* Telegram CTA gold style */
+          .telegram-clean {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: #fefaf2;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.2rem 0.8rem 1.5rem;
+            border: 1px solid #e5ce8a;
+            margin-top: 0.8rem;
+            transition: 0.2s;
+          }
+          .telegram-left {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+          }
+          .telegram-left i {
+            font-size: 2rem;
+            color: #27a6e5;
+          }
+          .telegram-left div strong {
+            font-size: 1rem;
+            color: #1e2a36;
+          }
+          .telegram-left div small {
+            font-size: 0.7rem;
+            color: #6c7a8e;
+          }
+          .btn-gold {
+            background: linear-gradient(135deg, #f5e3a4, #d4af37, #fae473);
+            border: none;
+            padding: 0.65rem 1.8rem;
+            border-radius: 2.2rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #1f2a2e;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+          }
+          .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
+            background: linear-gradient(135deg, #fae473, #d4af37, #f5e3a4);
+          }
+          hr {
+            margin: 1rem 0 0.6rem;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, #e9dbbd, #d4af37, #e9dbbd);
+          }
+          .footer-note {
+            font-size: 0.65rem;
+            text-align: center;
+            margin-top: 1rem;
+            color: #8b9ab0;
+          }
+
+          /* RESPONSIVE FIXES: no layout breakage, everything stays elegant */
+          @media (max-width: 1050px) {
+            .premium-layout {
+              flex-direction: column;
+            }
+            .tv-full-side {
+              min-height: 550px;
+              flex: none;
+              height: auto;
+            }
+            .tv-widget-full {
+              padding: 1.2rem;
+              min-height: 500px;
+            }
+            .tradingview-widget-container iframe {
+              min-height: 480px !important;
+            }
+            .content-clean-side {
+              margin: 1.8rem 2rem;
+              padding: 0.5rem 0 1rem 0;
+            }
+            .brand-title {
+              font-size: 2.3rem;
+            }
+          }
+          @media (max-width: 700px) {
+            .content-clean-side {
+              margin: 1.2rem 1.5rem;
+              padding-right: 0;
+            }
+            .instrument-focus-row {
+              flex-direction: column;
+            }
+            .telegram-clean {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .btn-gold {
+              width: 100%;
+              justify-content: center;
+            }
+            .brand-title {
+              font-size: 1.9rem;
+            }
+            .lead-description {
+              font-size: 0.95rem;
+            }
+            .tv-widget-full {
+              padding: 0.8rem;
+            }
+            .tradingview-widget-container {
+              border-radius: 1rem;
+            }
+          }
+          /* extra small devices */
+          @media (max-width: 480px) {
+            .content-clean-side {
+              margin: 1rem 1rem;
+            }
+            .years-badge {
+              font-size: 0.7rem;
+              padding: 0.25rem 1rem;
+            }
+            .insight-quote {
+              padding: 0.8rem 1rem;
+            }
+          }
+          /* right side scroll subtle */
+          .content-clean-side::-webkit-scrollbar {
+            width: 4px;
+          }
+          .content-clean-side::-webkit-scrollbar-track {
+            background: #f1f1f1;
+          }
+          .content-clean-side::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="premium-layout">
+          <!-- LEFT PANEL: FULLY FUNCTIONAL TRADINGVIEW MARKET OVERVIEW WIDGET (no cropping) -->
+          <div class="tv-full-side">
+            <div class="tv-widget-full">
+              <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div
+                  class="tradingview-widget-copyright"
+                  style="display: none"
+                ></div>
+                <script
+                  type="text/javascript"
+                  src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+                  async
+                >
+                  {
+                    "colorTheme": "dark",
+                    "dateRange": "12M",
+                    "locale": "en",
+                    "largeChartUrl": "",
+                    "isTransparent": false,
+                    "showFloatingTooltip": true,
+                    "plotLineColorGrowing": "#d4af37",
+                    "plotLineColorFalling": "#2962FF",
+                    "gridLineColor": "rgba(240, 243, 250, 0.1)",
+                    "scaleFontColor": "#E0E0E0",
+                    "belowLineFillColorGrowing": "rgba(212, 175, 55, 0.12)",
+                    "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                    "belowLineFillColorGrowingBottom": "rgba(212, 175, 55, 0)",
+                    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                    "symbolActiveColor": "rgba(212, 175, 55, 0.2)",
+                    "tabs": [
+                      {
+                        "title": "Indices",
+                        "symbols": [
+                          { "s": "FOREXCOM:SPXUSD", "d": "S&P 500" },
+                          { "s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100" },
+                          { "s": "FOREXCOM:DJI", "d": "Dow Jones" },
+                          { "s": "INDEX:NKY", "d": "Nikkei 225" },
+                          { "s": "INDEX:DEU40", "d": "DAX 40" },
+                          { "s": "FOREXCOM:UKXGBP", "d": "FTSE 100" }
+                        ],
+                        "originalTitle": "Indices"
+                      },
+                      {
+                        "title": "Futures",
+                        "symbols": [
+                          { "s": "CME_MINI:ES1!", "d": "E-mini S&P 500" },
+                          { "s": "CME:6E1!", "d": "Euro FX Futures" },
+                          { "s": "COMEX:GC1!", "d": "Gold Futures" },
+                          { "s": "NYMEX:CL1!", "d": "WTI Crude Oil" },
+                          { "s": "CBOT:ZC1!", "d": "Corn Futures" }
+                        ],
+                        "originalTitle": "Futures"
+                      },
+                      {
+                        "title": "Stock",
+                        "symbols": [
+                          { "s": "NASDAQ:AAPL", "d": "Apple Inc" },
+                          { "s": "NYSE:TSLA", "d": "Tesla" },
+                          { "s": "NYSE:BRK.B", "d": "Berkshire Hathaway" },
+                          { "s": "NASDAQ:MSFT", "d": "Microsoft" },
+                          { "s": "NSE:RELIANCE", "d": "Reliance Industries" },
+                          { "s": "BSE:TCS", "d": "Tata Consultancy" }
+                        ],
+                        "originalTitle": "Stocks"
+                      },
+                      {
+                        "title": "Forex",
+                        "symbols": [
+                          { "s": "FX:EURUSD", "d": "EUR/USD" },
+                          { "s": "FX:GBPUSD", "d": "GBP/USD" },
+                          { "s": "FX:USDJPY", "d": "USD/JPY" },
+                          { "s": "FX:USDCHF", "d": "USD/CHF" },
+                          { "s": "FX:AUDUSD", "d": "AUD/USD" },
+                          { "s": "FX:USDCAD", "d": "USD/CAD" }
+                        ],
+                        "originalTitle": "Forex"
+                      },
+                      {
+                        "title": "Crypto",
+                        "symbols": [
+                          { "s": "COINBASE:BTCUSD", "d": "Bitcoin USD" },
+                          { "s": "COINBASE:ETHUSD", "d": "Ethereum USD" },
+                          { "s": "BINANCE:SOLUSDT", "d": "Solana USDT" },
+                          { "s": "BINANCE:BNBUSDT", "d": "BNB USDT" },
+                          { "s": "BITSTAMP:XRPUSD", "d": "XRP USD" }
+                        ],
+                        "originalTitle": "Crypto"
+                      }
+                    ],
+                    "support_host": "https://www.tradingview.com",
+                    "width": "100%",
+                    "height": "100%",
+                    "showSymbolLogo": true,
+                    "showChart": true
+                  }
+                </script>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: brand story, gold accent, no overflow issues, full responsiveness -->
+          <div class="content-clean-side">
+            <!-- credibility badge -->
+            <div class="years-badge">
+              <i class="fas fa-chart-line gold-accent"></i> 8+ Years · Live
+              Markets · Price Action Mastery
+            </div>
+
+            <h1 class="brand-title">Gujju <span>Forex Wala</span></h1>
+
+            <div class="lead-description">
+              Professional trading & market analysis — built on
+              <span class="gold-gradient-text">experience, discipline</span>
+              and deep global market understanding.
+            </div>
+
+            <div class="description-text">
+              With more than
+              <strong style="color: #d4af37"
+                >8 years of active involvement in Forex and Cryptocurrency
+                trading</strong
+              >, we have grown alongside changing market conditions, evolving
+              price behavior, and trader psychology. Our journey began with a
+              simple but powerful goal:
+            </div>
+
+            <div class="insight-quote">
+              <i
+                class="fas fa-quote-left"
+                style="color: #d4af37; margin-right: 8px"
+              ></i>
+              “To master price action and build trading strategies that work in
+              real market conditions, not just in theory.”
+            </div>
+
+            <div class="description-text">
+              Through years of
+              <strong
+                >live market trading, data analysis, and continuous strategy
+                refinement</strong
+              >, we have developed
+              <strong>hand-crafted, precision-based trading systems</strong>,
+              with special focus on
+              <strong style="color: #d4af37"
+                >Gold (XAUUSD) and Bitcoin (BTC)</strong
+              >
+              — two of the most profitable and actively traded instruments in
+              the world.
+            </div>
+
+            <!-- Instrument focus cards (elegant gold touch) -->
+            <div class="instrument-focus-row">
+              <div class="instrument-card">
+                <i class="fas fa-coins"></i>
+                <h4>XAUUSD · Gold</h4>
+                <p>
+                  Safe-haven dynamics · Macro & order flow · Precision
+                  supply/demand zones
+                </p>
+              </div>
+              <div class="instrument-card">
+                <i class="fab fa-bitcoin"></i>
+                <h4>Bitcoin · BTC</h4>
+                <p>
+                  Volatility alpha · Cycle analysis · Liquidity sweeps &
+                  on-chain edge
+                </p>
+              </div>
+              <div class="instrument-card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Hand-crafted systems</h4>
+                <p>
+                  Adaptive logic · Price action frameworks · Real-market
+                  execution
+                </p>
+              </div>
+            </div>
+
+            <!-- Telegram CTA block with working link (placeholder but ready) -->
+            <div class="telegram-clean">
+              <div class="telegram-left">
+                <i class="fab fa-telegram-plane"></i>
+                <div>
+                  <strong>Join Telegram Channel</strong><br />
+                  <small
+                    >Real-time insights · Trade setups · Market psychology &
+                    live analysis</small
+                  >
+                </div>
+              </div>
+              <a
+                href="https://t.me/+YourChannelLink"
+                class="btn-gold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-telegram"></i> Join Telegram →
+              </a>
+            </div>
+
+            <hr />
+            <div class="footer-note">
+              <i class="fas fa-chart-simple gold-accent"></i> Gujju Forex Wala —
+              where discipline meets price action. Global markets, precision
+              trading.
+            </div>
+          </div>
+        </div>
+
+        <!-- SCRIPT TO GUARANTEE IFRAME RESIZING & AVOID ANY LAYOUT BREAKAGE -->
+        <script>
+          (function ensureWidgetFullHeight() {
+            function fixWidgetIframe() {
+              const containers = document.querySelectorAll(
+                ".tradingview-widget-container",
+              );
+              if (!containers.length) return;
+              containers.forEach((container) => {
+                const iframes = container.querySelectorAll("iframe");
+                iframes.forEach((iframe) => {
+                  // force 100% relative to container
+                  iframe.style.width = "100%";
+                  iframe.style.height = "100%";
+                  iframe.style.minHeight = "520px";
+                  // additionally apply inline to resist overwrites
+                  iframe.setAttribute(
+                    "style",
+                    iframe.getAttribute("style") +
+                      "; min-height: 520px !important; height: 100% !important; width: 100% !important;",
+                  );
+                });
+              });
+            }
+
+            // initial fix after widget loads (TradingView injects dynamically)
+            setTimeout(fixWidgetIframe, 500);
+            window.addEventListener("load", () => {
+              fixWidgetIframe();
+              setTimeout(fixWidgetIframe, 800);
+            });
+            window.addEventListener("resize", () => {
+              fixWidgetIframe();
+            });
+            // observe dynamic DOM changes (for late widget embedding)
+            const observer = new MutationObserver(() => fixWidgetIframe());
+            const mainContainer = document.querySelector(".tv-full-side");
+            if (mainContainer) {
+              observer.observe(mainContainer, {
+                childList: true,
+                subtree: true,
+              });
+            }
+            // additional redundancy for perfect scaling
+            setInterval(() => {
+              const iframes = document.querySelectorAll(
+                ".tradingview-widget-container iframe",
+              );
+              iframes.forEach((iframe) => {
+                if (iframe.offsetHeight < 400 && window.innerWidth > 600) {
+                  iframe.style.height = "550px";
+                  iframe.style.minHeight = "520px";
+                }
+              });
+            }, 1500);
+          })();
+        </script>
+      </body>
+    </html>
+    <!-- ===========About us End=========== -->
+    <!-- ===============Why chose us?==============  -->
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>Gujju Forex | Why Choose Us — Moving Background</title>
+
+        <!-- Google Fonts + Font Awesome 6 (icons only, no emojis) -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: #000000;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+          }
+
+          /* ========= MOVING GRADIENT BACKGROUND SECTION ========= */
+          /* Animated gradient that flows smoothly — clean, modern, and dynamic but not overwhelming */
+          .gf-why-section {
+            position: relative;
+            background: radial-gradient(circle at 20% 30%, #0a0a0a, #000000);
+            /* fallback solid, then overlay moving gradient for depth */
+            padding: 70px 24px;
+            overflow: hidden;
+            isolation: isolate;
+          }
+
+          /* Animated gradient layer — subtle movement, keeps content readable */
+          .gf-why-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              125deg,
+              rgba(0, 0, 0, 0.92) 0%,
+              rgba(10, 8, 2, 0.88) 30%,
+              rgba(212, 175, 55, 0.07) 55%,
+              rgba(0, 0, 0, 0.92) 85%
+            );
+            background-size: 300% 300%;
+            animation: richMove 22s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          /* Secondary moving light veil — very subtle shimmer that adds 'moving' feel without distraction */
+          .gf-why-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+              ellipse at 40% 50%,
+              rgba(212, 175, 55, 0.03) 0%,
+              transparent 70%
+            );
+            background-size: 200% 200%;
+            animation: softPulse 14s ease infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          @keyframes richMove {
+            0% {
+              background-position: 0% 0%;
+            }
+            25% {
+              background-position: 50% 30%;
+            }
+            50% {
+              background-position: 100% 60%;
+            }
+            75% {
+              background-position: 50% 80%;
+            }
+            100% {
+              background-position: 0% 0%;
+            }
+          }
+
+          @keyframes softPulse {
+            0% {
+              opacity: 0.2;
+              transform: scale(1);
+            }
+            100% {
+              opacity: 0.6;
+              transform: scale(1.2);
+            }
+          }
+
+          /* keep content above the moving backgrounds */
+          .gf-why-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+          }
+
+          /* ========= LEFT CONTENT ========= */
+          .gf-why-left h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 28px;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+
+          .gf-why-left h2 span {
+            color: #d4af37;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e6c458 0%, #d4af37 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+          }
+
+          /* Feature grid - smaller, cleaner */
+          .gf-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 28px;
+            margin: 28px 0 24px 0;
+          }
+
+          .gf-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e0e0e0;
+            padding: 6px 0;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(0px);
+          }
+
+          .gf-feature i {
+            font-size: 1rem;
+            color: #d4af37;
+            width: 22px;
+            text-align: center;
+            flex-shrink: 0;
+            transition:
+              transform 0.2s,
+              color 0.2s;
+          }
+
+          .gf-feature:hover {
+            color: #ffffff;
+            transform: translateX(3px);
+          }
+
+          .gf-feature:hover i {
+            color: #f3d96b;
+            transform: scale(1.05);
+          }
+
+          /* Paragraphs - smaller, more readable */
+          .gf-why-left p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #cacaca;
+            margin-bottom: 16px;
+          }
+
+          .gf-why-left p strong {
+            color: #d4af37;
+            font-weight: 600;
+          }
+
+          /* subtle divider for clarity */
+          .gf-divider {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(
+              90deg,
+              #d4af37,
+              rgba(212, 175, 55, 0.2)
+            );
+            margin: 20px 0 16px 0;
+            opacity: 0.7;
+          }
+
+          /* ========= RIGHT - JUST PHOTO, NO BOX, NO SHADOW ========= */
+          .gf-image-wrapper {
+            line-height: 0;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+          }
+
+          .gf-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            filter: brightness(1) contrast(1.02);
+            transition: filter 0.4s;
+          }
+
+          .gf-image-wrapper img:hover {
+            filter: brightness(1.02) contrast(1.04);
+          }
+
+          /* ========= RESPONSIVE: content then image ========= */
+          @media (max-width: 900px) {
+            .gf-why-container {
+              grid-template-columns: 1fr;
+              gap: 40px;
+            }
+
+            /* order: content first, image second */
+            .gf-why-left {
+              order: 1;
+            }
+
+            .gf-image-wrapper {
+              order: 2;
+              max-width: 500px;
+              margin: 0 auto;
+              width: 100%;
+            }
+
+            .gf-why-left h2 {
+              font-size: 1.9rem;
+              text-align: left;
+            }
+          }
+
+          @media (max-width: 640px) {
+            .gf-why-section {
+              padding: 50px 20px;
+            }
+
+            .gf-why-left h2 {
+              font-size: 1.7rem;
+            }
+
+            .gf-feature-grid {
+              grid-template-columns: 1fr;
+              gap: 10px;
+            }
+
+            .gf-feature {
+              font-size: 0.8rem;
+              padding: 5px 0;
+            }
+
+            .gf-why-left p {
+              font-size: 0.8rem;
+            }
+
+            .gf-divider {
+              margin: 16px 0 12px 0;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .gf-why-left h2 {
+              font-size: 1.5rem;
+            }
+
+            .gf-feature i {
+              font-size: 0.9rem;
+              width: 20px;
+            }
+          }
+
+          /* subtle mouse-follow glow effect (optional, but keeps it modern & "moving" interaction) */
+          .gf-why-section {
+            cursor: default;
+          }
+        </style>
+      </head>
+      <body>
+        <section class="gf-why-section">
+          <div class="gf-why-container">
+            <!-- LEFT: content area (clean & readable) -->
+            <div class="gf-why-left">
+              <h2>Why Choose <span>Gujju Forex</span></h2>
+
+              <!-- feature list with icons, no emojis -->
+              <div class="gf-feature-grid">
+                <div class="gf-feature">
+                  <i class="fas fa-certificate"></i> Certified Trading Company
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-headset"></i> 24×7 Expert Support
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-chart-line"></i> High Quality Market Research
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-clock"></i> Time Saving Trade Signals
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-hand-holding-usd"></i> Trusted Investment
+                  Guidance
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-lightbulb"></i> Innovation With Profit Focus
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-users"></i> Professional Trading Team
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-graduation-cap"></i> Advanced Learning System
+                </div>
+              </div>
+
+              <div class="gf-divider"></div>
+
+              <p>
+                <strong>Gujju Forex</strong> provides transparent, data-driven
+                trading solutions to help traders grow confidently in global
+                markets.
+              </p>
+
+              <p>
+                Members receive real-time BUY & SELL alerts with clear entry,
+                stop-loss, and profit targets — designed for consistent growth.
+              </p>
+            </div>
+
+            <!-- RIGHT: just the photo, no box, no border, no shadow -->
+            <div class="gf-image-wrapper">
+              <img
+                src="https://gujjuforex.com/wp-content/uploads/2026/01/GUJJU-WEB-IMAGE-01-scaled.png"
+                alt="Gujju Forex trading platform visual"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- optional tiny script to enhance depth with subtle parallax-like "movement" on mousemove (purely aesthetic but aligns with moving bg request) -->
+        <script>
+          (function () {
+            // add ultra-light mouse interaction to the background gradients (only for immersive "moving" feel)
+            const section = document.querySelector(".gf-why-section");
+            if (!section) return;
+
+            // We'll dynamically shift the gradient's pseudo-element position slightly based on mouse coordinates.
+            // this gives a "living background" feel without overwhelming the content.
+            // only if mouse moves on section, and only if device is not touch-only (optional)
+            let ticking = false;
+
+            const beforeElem = getComputedStyle(section, "::before");
+            // We can adjust background-position of the pseudo-element dynamically via custom property.
+            // simpler: create a CSS variable and update transform/background position?
+            // To keep performance smooth we'll add a data attribute and animate the background position.
+            // However the pseudo-element gradient is already animated, but we add subtle extra parallax.
+            // to avoid conflict we use a second layer: not necessary but fun. We'll update background-position of a custom var?
+
+            // Better approach: create a separate moving gradient element that follows mouse? That might be heavy.
+            // Instead just use a minimal mousemove effect that slightly shifts the ::before background-position offset.
+            // We'll apply inline style to section with custom properties that the pseudo-element uses.
+            // Modify CSS to use custom properties for background-position offset.
+            const style = document.createElement("style");
+            style.textContent = `
+        .gf-why-section {
+          --shift-x: 0px;
+          --shift-y: 0px;
+        }
+        .gf-why-section::before {
+          background-position: calc(0% + var(--shift-x)) calc(0% + var(--shift-y));
+          transition: background-position 0.1s ease-out;
+        }
+      `;
+            document.head.appendChild(style);
+
+            let mouseX = 0,
+              mouseY = 0;
+            let targetX = 0,
+              targetY = 0;
+
+            section.addEventListener("mousemove", (e) => {
+              const rect = section.getBoundingClientRect();
+              // normalize mouse position relative to section (0 to 1)
+              const x = (e.clientX - rect.left) / rect.width;
+              const y = (e.clientY - rect.top) / rect.height;
+              // map to shift range: -1.5% to 1.5% shift in background position
+              targetX = (x - 0.5) * 3; // max ±1.5%
+              targetY = (y - 0.5) * 2; // max ±1%
+              if (!ticking) {
+                requestAnimationFrame(() => {
+                  // smooth interpolation
+                  mouseX = mouseX * 0.85 + targetX * 0.15;
+                  mouseY = mouseY * 0.85 + targetY * 0.15;
+                  section.style.setProperty("--shift-x", mouseX + "%");
+                  section.style.setProperty("--shift-y", mouseY + "%");
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            });
+
+            section.addEventListener("mouseleave", () => {
+              // reset smoothly
+              targetX = 0;
+              targetY = 0;
+              const resetFrame = () => {
+                mouseX = mouseX * 0.9;
+                mouseY = mouseY * 0.9;
+                section.style.setProperty("--shift-x", mouseX + "%");
+                section.style.setProperty("--shift-y", mouseY + "%");
+                if (Math.abs(mouseX) > 0.05 || Math.abs(mouseY) > 0.05) {
+                  requestAnimationFrame(resetFrame);
+                } else {
+                  section.style.setProperty("--shift-x", "0%");
+                  section.style.setProperty("--shift-y", "0%");
+                }
+              };
+              requestAnimationFrame(resetFrame);
+            });
+          })();
+        </script>
+      </body>
+    </html>
+
+    <!-- ===========why choose us end===========  -->
+    <!-- =========premuim Chanel========= -->
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>Gold Standard VIP | Elite Trading Hub</title>
+        <!-- Font Awesome 6 (Sharp & Solid where appropriate) -->
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: #fefefe;
+          }
+
+          /* MAIN SECTION - pure white canvas */
+          .vip-elite-section {
+            background: #ffffff;
+            padding: 56px 24px;
+            width: 100%;
+            font-family:
+              "Inter",
+              system-ui,
+              -apple-system,
+              "Segoe UI",
+              Roboto,
+              "Helvetica Neue",
+              sans-serif;
+          }
+
+          /* LUXURY DARK CONTAINER with subtle floating animation */
+          .vip-luxury-core {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: radial-gradient(ellipse at 25% 20%, #141414, #010101);
+            border-radius: 48px;
+            padding: 44px 44px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            color: #ffffff;
+            box-shadow:
+              0 30px 50px -18px rgba(0, 0, 0, 0.55),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(245, 197, 66, 0.3);
+            transition: all 0.3s ease;
+            animation: smoothEntry 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1)
+              forwards;
+          }
+
+          @keyframes smoothEntry {
+            0% {
+              opacity: 0;
+              transform: translateY(24px) scale(0.98);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+
+          /* LEFT SIDE */
+          .vip-left-side {
+            flex: 1.2 1 54%;
+          }
+
+          .vip-left-side h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(130deg, #fff, #f5e1b0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
+
+          .vip-left-side h2 i {
+            background: none;
+            color: #f5c542;
+            font-size: 32px;
+            filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.4));
+          }
+
+          /* feature rows with soft animation on scroll/hover */
+          .feature-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s ease-in-out;
+          }
+
+          .feature-list-item:hover {
+            background: linear-gradient(
+              90deg,
+              rgba(245, 197, 66, 0.05),
+              transparent
+            );
+            padding-left: 12px;
+            border-radius: 24px;
+            border-bottom-color: rgba(245, 197, 66, 0.25);
+            transform: translateX(5px);
+          }
+
+          .feature-icon-text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 15.5px;
+            font-weight: 500;
+            color: #f1f1f1;
+          }
+
+          .feature-icon-text i {
+            width: 28px;
+            font-size: 1.25rem;
+            color: #f5c542;
+            text-align: center;
+            transition: transform 0.2s;
+          }
+
+          .feature-list-item:hover .feature-icon-text i {
+            transform: scale(1.1);
+          }
+
+          .premium-tag {
+            background: rgba(245, 197, 66, 0.14);
+            padding: 5px 14px;
+            border-radius: 60px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #f5c542;
+            letter-spacing: 0.2px;
+            backdrop-filter: blur(2px);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 0.5px solid rgba(245, 197, 66, 0.2);
+          }
+
+          /* elegant tagline */
+          .elegant-tagline {
+            margin-top: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #f5c542;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 197, 66, 0.08);
+            padding: 7px 22px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            transition: all 0.2s;
+          }
+
+          .elegant-tagline i {
+            font-size: 0.95rem;
+            animation: gentlePulse 2s infinite;
+          }
+
+          @keyframes gentlePulse {
+            0% {
+              opacity: 0.7;
+              transform: scale(0.98);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          /* BROKER BUTTONS refined */
+          .broker-flex-group {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+          }
+
+          .btn-gold-soft {
+            flex: 1;
+            min-width: 115px;
+            text-align: center;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.55);
+            border: 1.5px solid #f5c542;
+            color: #f5c542;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            backdrop-filter: blur(4px);
+          }
+
+          .btn-gold-soft i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+          }
+
+          .btn-gold-soft:hover {
+            background: #f5c542;
+            color: #0a0a0a;
+            border-color: #ffdd99;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -8px rgba(245, 197, 66, 0.4);
+          }
+
+          .btn-gold-soft:hover i {
+            transform: translateX(5px);
+            color: #000;
+          }
+
+          /* RIGHT CARD - enhanced with shimmer and depth */
+          .vip-card-right {
+            flex: 0.9 1 38%;
+            background: radial-gradient(ellipse at 50% 25%, #1e1e1e, #030303);
+            border: 1.8px solid rgba(245, 197, 66, 0.7);
+            border-radius: 40px;
+            padding: 34px 28px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+          }
+
+          /* subtle animated shine */
+          .vip-card-right::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 180%;
+            height: 180%;
+            background: radial-gradient(
+              circle,
+              rgba(245, 197, 66, 0.08),
+              transparent 70%
+            );
+            transform: rotate(25deg);
+            animation: softShimmer 8s infinite linear;
+            pointer-events: none;
+          }
+
+          @keyframes softShimmer {
+            0% {
+              transform: translateX(-30%) rotate(25deg);
+              opacity: 0.3;
+            }
+            50% {
+              transform: translateX(15%) rotate(25deg);
+              opacity: 0.6;
+            }
+            100% {
+              transform: translateX(-30%) rotate(25deg);
+              opacity: 0.3;
+            }
+          }
+
+          .vip-card-right:hover {
+            transform: translateY(-5px);
+            border-color: #f5c542;
+            box-shadow:
+              0 28px 40px -15px rgba(0, 0, 0, 0.7),
+              0 0 12px rgba(245, 197, 66, 0.3);
+          }
+
+          .vip-card-right h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+          }
+
+          .vip-card-right h3 i {
+            color: #f5c542;
+            font-size: 26px;
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+          }
+
+          .big-bonus {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f5c542, #ffdd99, #e6b422);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 14px 0 12px;
+            letter-spacing: -0.5px;
+          }
+
+          .vip-card-right p {
+            font-size: 14px;
+            color: #dbdbdb;
+            line-height: 1.55;
+            margin: 16px 0;
+          }
+
+          .vip-card-right p i {
+            color: #f5c542;
+            margin-right: 6px;
+            width: 22px;
+          }
+
+          .vip-card-right p strong {
+            color: #f5c542;
+            font-weight: 800;
+          }
+
+          /* primary CTA with micro animation */
+          .cta-telegram-lux {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 14px;
+            padding: 13px 24px;
+            background: linear-gradient(100deg, #f5c542, #e0ae28);
+            color: #0a0a0a;
+            font-weight: 800;
+            font-size: 15px;
+            border-radius: 80px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            border: none;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .cta-telegram-lux i {
+            font-size: 1rem;
+            transition: transform 0.2s;
+          }
+
+          .cta-telegram-lux:hover {
+            background: linear-gradient(100deg, #ffdc7a, #f5c542);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 24px -8px rgba(245, 197, 66, 0.45);
+          }
+
+          .cta-telegram-lux:hover i {
+            transform: translateX(6px);
+          }
+
+          .partner-footer {
+            margin-top: 22px;
+            font-size: 12.5px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 12px;
+            border-radius: 32px;
+            width: 100%;
+            backdrop-filter: blur(3px);
+            border: 0.5px solid rgba(245, 197, 66, 0.15);
+          }
+
+          .partner-footer i {
+            color: #f5c542;
+            width: 24px;
+            margin-right: 6px;
+          }
+
+          .partner-footer strong {
+            font-weight: 800;
+            color: #f5c542;
+            background: rgba(245, 197, 66, 0.15);
+            padding: 3px 10px;
+            border-radius: 40px;
+            font-size: 11.5px;
+          }
+
+          /* FULL RESPONSIVE */
+          @media (max-width: 900px) {
+            .vip-elite-section {
+              padding: 44px 20px;
+            }
+            .vip-luxury-core {
+              padding: 34px 30px;
+              gap: 34px;
+            }
+            .vip-left-side h2 {
+              font-size: 27px;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .vip-elite-section {
+              padding: 38px 16px;
+            }
+            .vip-luxury-core {
+              padding: 28px 22px;
+              flex-direction: column;
+              border-radius: 40px;
+            }
+            .vip-left-side,
+            .vip-card-right {
+              flex: 1 1 100%;
+            }
+            .vip-left-side h2 {
+              font-size: 24px;
+              justify-content: center;
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            .feature-list-item {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 8px;
+              padding: 12px 0;
+            }
+            .feature-icon-text {
+              font-size: 14px;
+              width: 100%;
+            }
+            .premium-tag {
+              font-size: 11px;
+              align-self: flex-start;
+            }
+            .elegant-tagline {
+              font-size: 13px;
+              margin-top: 20px;
+            }
+            .broker-flex-group {
+              flex-direction: column;
+              gap: 12px;
+            }
+            .btn-gold-soft {
+              width: 100%;
+              padding: 10px 16px;
+            }
+            .vip-card-right {
+              padding: 28px 22px;
+            }
+            .big-bonus {
+              font-size: 40px;
+            }
+            .vip-card-right h3 {
+              font-size: 22px;
+            }
+            .vip-card-right p {
+              font-size: 13px;
+            }
+            .cta-telegram-lux {
+              padding: 12px 20px;
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .vip-elite-section {
+              padding: 30px 12px;
+            }
+            .vip-luxury-core {
+              padding: 22px 18px;
+              border-radius: 32px;
+            }
+            .vip-left-side h2 {
+              font-size: 21px;
+              gap: 6px;
+            }
+            .vip-left-side h2 i {
+              font-size: 24px;
+            }
+            .feature-icon-text {
+              gap: 10px;
+              font-size: 13px;
+            }
+            .feature-icon-text i {
+              width: 24px;
+              font-size: 1rem;
+            }
+            .premium-tag {
+              font-size: 10px;
+              padding: 3px 10px;
+            }
+            .big-bonus {
+              font-size: 34px;
+            }
+            .partner-footer {
+              font-size: 11px;
+            }
+          }
+
+          @media (min-width: 1400px) {
+            .vip-luxury-core {
+              max-width: 1420px;
+              padding: 52px 56px;
+            }
+            .vip-left-side h2 {
+              font-size: 32px;
+            }
+            .feature-icon-text {
+              font-size: 16px;
+            }
+            .big-bonus {
+              font-size: 52px;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section class="vip-elite-section">
+          <div class="vip-luxury-core">
+            <!-- LEFT: features and broker links (all links intact) -->
+            <div class="vip-left-side">
+              <h2>
+                <i class="fas fa-crown"></i>
+                Join My Premium Channel
+              </h2>
+
+              <!-- Feature 1 -->
+              <div class="feature-list-item">
+                <div class="feature-icon-text">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Gold Killer | ICT & SMC Trader</span>
+                </div>
+                <div class="premium-tag">
+                  <i class="fas fa-bullseye"></i> Ultra Accuracy
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="feature-list-item">
+                <div class="feature-icon-text">
+                  <i class="fas fa-book-open"></i>
+                  <span>First Learn, then Earn</span>
+                </div>
+                <div class="premium-tag">
+                  <i class="fas fa-chart-simple"></i> Smart Trading
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="feature-list-item">
+                <div class="feature-icon-text">
+                  <i class="fas fa-bolt"></i>
+                  <span>High Accuracy Signals</span>
+                </div>
+                <div class="premium-tag">
+                  <i class="fas fa-shield-haltered"></i> Risk Managed
+                </div>
+              </div>
+
+              <!-- Feature 4 -->
+              <div class="feature-list-item">
+                <div class="feature-icon-text">
+                  <i class="fas fa-handshake"></i>
+                  <span>Trusted Brokers</span>
+                </div>
+                <div class="premium-tag">
+                  <i class="fas fa-building-columns"></i> XM & Exness
+                </div>
+              </div>
+
+              <div class="elegant-tagline">
+                <i class="fas fa-fire-flame-curved"></i> Level up your trading
+                journey now!
+              </div>
+
+              <!-- BROKER BUTTONS (ALL ORIGINAL LINKS) -->
+              <div class="broker-flex-group">
+                <a
+                  href="https://one.exnesstrack.org/a/76cl5o2qff"
+                  target="_blank"
+                  class="btn-gold-soft"
+                >
+                  <i class="fas fa-arrow-right-to-bracket"></i> Exness
+                </a>
+                <a
+                  href="https://vigco.co/la-com/GUJJUFX"
+                  target="_blank"
+                  class="btn-gold-soft"
+                >
+                  <i class="fas fa-arrow-right-to-bracket"></i> Vantage
+                </a>
+                <a
+                  href="https://clicks.pipaffiliates.com/c?c=1064870&l=en&p=1"
+                  target="_blank"
+                  class="btn-gold-soft"
+                >
+                  <i class="fas fa-arrow-right-to-bracket"></i> XM
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT CARD: Premium Bonus + Telegram Access -->
+            <div class="vip-card-right">
+              <h3>
+                <i class="fas fa-gem"></i>
+                Premium Access
+                <i class="fas fa-star-of-life"></i>
+              </h3>
+              <div class="big-bonus">100% BONUS</div>
+              <p>
+                <i class="fas fa-circle-dollar-to-slot"></i> Deposit
+                <strong>$100–200</strong> & get instant premium access.<br />
+                <i class="fas fa-chart-line"></i> Bonus usable even during
+                drawdown.<br />
+                <i class="fas fa-brain"></i> Trade with confidence & proper
+                setups.
+              </p>
+
+              <!-- TELEGRAM LINK (PRESERVED) -->
+              <a
+                href="https://t.me/TeamGujjuInternational"
+                target="_blank"
+                class="cta-telegram-lux"
+              >
+                <i class="fab fa-telegram"></i> Become Premium Now
+                <i class="fas fa-arrow-right"></i>
+              </a>
+
+              <div class="partner-footer">
+                <i class="fas fa-qrcode"></i> Partner Code:
+                <strong>Q224C</strong><br />
+                <i class="fab fa-telegram-plane"></i> DM:
+                <strong>@TeamGujjuInternational</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </body>
+    </html>
+    ================feature=================
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>Gujju Forex | Premium Includes</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: #f8fafc;
+          }
+
+          /* ==============================
+       GUJJU FOREX – PREMIUM SECTION
+       REFINED: LIGHTER, ICON-BASED, SAME SCROLL ANIMATION
+    ================================ */
+          #gf-premium-includes {
+            padding: 70px 24px;
+            background: #ffffff;
+            font-family:
+              "Inter",
+              system-ui,
+              -apple-system,
+              "Segoe UI",
+              sans-serif;
+          }
+
+          /* CONTAINER */
+          .gf-premium-container {
+            max-width: 1280px;
+            margin: 0 auto;
+          }
+
+          /* HEADING */
+          .gf-premium-heading {
+            text-align: center;
+            margin-bottom: 56px;
+          }
+
+          .gf-premium-heading h2 {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+            color: #0a0c10;
+          }
+
+          .gf-premium-heading h2 span {
+            background: linear-gradient(135deg, #c9a53b 0%, #e4bf5e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
+
+          .gf-premium-heading p {
+            font-size: 17px;
+            line-height: 1.5;
+            color: #4b5563;
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 400;
+          }
+
+          /* GRID – more compact height */
+          .gf-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+          }
+
+          /* ======================
+       PREMIUM CARD (enhanced)
+    ======================= */
+          .gf-premium-card {
+            position: relative;
+            background: #dedede66 !important;
+            border-radius: 28px;
+            padding: 28px 26px 30px 26px;
+            border: 1px solid #eef2f6;
+            box-shadow:
+              0 8px 20px rgba(0, 0, 0, 0.02),
+              0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            overflow: hidden;
+
+            /* subtle inner glow for depth */
+            background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
+
+            /* LEFT → RIGHT ANIMATION (same as original) */
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+
+          /* SHOW STATE */
+          .gf-premium-card.show {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          /* STAGGER DELAY (kept identical timing) */
+          .gf-premium-card:nth-child(1) {
+            transition-delay: 0.05s;
+          }
+          .gf-premium-card:nth-child(2) {
+            transition-delay: 0.12s;
+          }
+          .gf-premium-card:nth-child(3) {
+            transition-delay: 0.19s;
+          }
+          .gf-premium-card:nth-child(4) {
+            transition-delay: 0.26s;
+          }
+          .gf-premium-card:nth-child(5) {
+            transition-delay: 0.33s;
+          }
+          .gf-premium-card:nth-child(6) {
+            transition-delay: 0.4s;
+          }
+
+          /* refined gold top line (softer) */
+          .gf-premium-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 15%;
+            width: 70%;
+            height: 2.5px;
+            background: linear-gradient(
+              90deg,
+              rgba(212, 175, 55, 0),
+              #d4af37,
+              rgba(212, 175, 55, 0)
+            );
+            opacity: 0.65;
+            border-radius: 2px;
+          }
+
+          /* Icon wrapper (new) */
+          .gf-card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            transition: all 0.2s ease;
+          }
+
+          .gf-card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 1.6;
+            stroke: #b4943b;
+            fill: none;
+          }
+
+          /* optional filled variant for some icons uses subtle fill */
+          .gf-card-icon .fill-gold {
+            stroke: #b4943b;
+            fill: #b4943b;
+            fill-opacity: 0.15;
+          }
+
+          /* CARD TITLE */
+          .gf-premium-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #111827;
+            margin-bottom: 12px;
+            line-height: 1.3;
+          }
+
+          /* CARD TEXT */
+          .gf-premium-card p {
+            font-size: 0.94rem;
+            line-height: 1.5;
+            color: #4b5563;
+            font-weight: 400;
+          }
+
+          /* HOVER EFFECT – modern lift, no excessive scale */
+          .gf-premium-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+              0 24px 36px -12px rgba(0, 0, 0, 0.12),
+              0 2px 5px rgba(0, 0, 0, 0.02);
+            border-color: rgba(212, 175, 55, 0.4);
+          }
+
+          .gf-premium-card:hover .gf-card-icon {
+            background: rgba(212, 175, 55, 0.15);
+            transform: scale(0.98);
+          }
+
+          /* optional subtle glow */
+          .gf-premium-card:hover::after {
+            opacity: 1;
+          }
+
+          /* RESPONSIVE */
+          @media (max-width: 1024px) {
+            #gf-premium-includes {
+              padding: 60px 24px;
+            }
+            .gf-premium-grid {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 24px;
+            }
+            .gf-premium-heading h2 {
+              font-size: 32px;
+            }
+          }
+
+          @media (max-width: 640px) {
+            #gf-premium-includes {
+              padding: 48px 20px;
+            }
+            .gf-premium-heading h2 {
+              font-size: 28px;
+            }
+            .gf-premium-heading p {
+              font-size: 15px;
+            }
+            .gf-premium-grid {
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+            .gf-premium-card {
+              padding: 24px 22px;
+            }
+            .gf-card-icon {
+              width: 48px;
+              height: 48px;
+              margin-bottom: 18px;
+            }
+            .gf-card-icon svg {
+              width: 24px;
+              height: 24px;
+            }
+            .gf-premium-card h3 {
+              font-size: 1.3rem;
+            }
+          }
+
+          /* reduced overall height: less padding, tighter grid */
+          @media (min-width: 1200px) {
+            #gf-premium-includes {
+              padding: 68px 32px;
+            }
+            .gf-premium-heading {
+              margin-bottom: 48px;
+            }
+            .gf-premium-card {
+              padding: 26px 26px 28px 26px;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section id="gf-premium-includes">
+          <div class="gf-premium-container">
+            <div class="gf-premium-heading">
+              <h2>What is included in <span>Gujju Forex</span>?</h2>
+              <p>
+                Everything you need to trade confidently with professional
+                guidance, structured systems, and premium market insights.
+              </p>
+            </div>
+
+            <div class="gf-premium-grid">
+              <!-- card 1 - why different: compass/star icon -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 2L12 7" stroke="#b4943b" />
+                    <path d="M12 17L12 22" stroke="#b4943b" />
+                    <path d="M2 12L7 12" stroke="#b4943b" />
+                    <path d="M17 12L22 12" stroke="#b4943b" />
+                    <circle cx="12" cy="12" r="4" stroke="#b4943b" />
+                    <path d="M4.93 4.93L8.4 8.4" stroke="#b4943b" />
+                    <path d="M15.6 15.6L19.07 19.07" stroke="#b4943b" />
+                    <path d="M19.07 4.93L15.6 8.4" stroke="#b4943b" />
+                    <path d="M8.4 15.6L4.93 19.07" stroke="#b4943b" />
+                  </svg>
+                </div>
+                <h3>Why Gujju Forex Is Different</h3>
+                <p>
+                  While most groups focus on small trades, Gujju Forex targets
+                  high-impact market moves with 600–1000+ pip potential using
+                  smart-money concepts.
+                </p>
+              </div>
+
+              <!-- card 2 - high accuracy signals: signal / radar -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"
+                      stroke="#b4943b"
+                    />
+                    <path d="M12 8v4l3 3" stroke="#b4943b" />
+                    <path
+                      d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+                      stroke="#b4943b"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="2"
+                      fill="#b4943b"
+                      fill-opacity="0.2"
+                      stroke="#b4943b"
+                    />
+                  </svg>
+                </div>
+                <h3>High Accuracy Signals</h3>
+                <p>
+                  Professionally curated signals with precise entries,
+                  stop-loss, targets, and disciplined risk-management rules.
+                </p>
+              </div>
+
+              <!-- card 3 - complete trading course: book + graduation cap style -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path
+                      d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                      stroke="#b4943b"
+                    />
+                    <path
+                      d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                      stroke="#b4943b"
+                    />
+                    <path d="M9 7h2" stroke="#b4943b" stroke-linecap="round" />
+                    <path d="M13 7h2" stroke="#b4943b" stroke-linecap="round" />
+                    <path d="M8 11h8" stroke="#b4943b" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <h3>Complete Trading Course</h3>
+                <p>
+                  Learn forex, gold, indices, and stocks from basics to advanced
+                  strategies with live sessions and mentorship.
+                </p>
+              </div>
+
+              <!-- card 4 - risk management: shield -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="#b4943b" />
+                    <path d="M12 22L12 12" stroke="#b4943b" />
+                    <path
+                      d="M3 7L3 13C3 17 7 20 12 22C17 20 21 17 21 13L21 7"
+                      stroke="#b4943b"
+                    />
+                    <path
+                      d="M8 11L11 14L16 8"
+                      stroke="#b4943b"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3>Risk Management System</h3>
+                <p>
+                  Capital-protection-first risk management to reduce drawdowns
+                  and achieve consistent long-term profitability.
+                </p>
+              </div>
+
+              <!-- card 5 - 1:1 VIP Support: chat/diamond -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                      stroke="#b4943b"
+                    />
+                    <path
+                      d="M8 10h.01"
+                      stroke="#b4943b"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M12 10h.01"
+                      stroke="#b4943b"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16 10h.01"
+                      stroke="#b4943b"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <h3>1:1 VIP Support</h3>
+                <p>
+                  Dedicated one-on-one VIP assistance with fast responses,
+                  personalized guidance, and priority support.
+                </p>
+              </div>
+
+              <!-- card 6 - weekly market outlook: chart / candlestick -->
+              <div class="gf-premium-card">
+                <div class="gf-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  >
+                    <path
+                      d="M3 3v18h18"
+                      stroke="#b4943b"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M18 17V9"
+                      stroke="#b4943b"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M12 17V5"
+                      stroke="#b4943b"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M6 17v-3"
+                      stroke="#b4943b"
+                      stroke-linecap="round"
+                    />
+                    <circle
+                      cx="18"
+                      cy="17"
+                      r="1.5"
+                      fill="#b4943b"
+                      fill-opacity="0.3"
+                      stroke="#b4943b"
+                    />
+                    <circle
+                      cx="12"
+                      cy="17"
+                      r="1.5"
+                      fill="#b4943b"
+                      fill-opacity="0.3"
+                      stroke="#b4943b"
+                    />
+                    <circle
+                      cx="6"
+                      cy="17"
+                      r="1.5"
+                      fill="#b4943b"
+                      fill-opacity="0.3"
+                      stroke="#b4943b"
+                    />
+                  </svg>
+                </div>
+                <h3>Weekly Market Outlook</h3>
+                <p>
+                  Weekly professional analysis covering trends, key levels,
+                  sentiment, and high-probability trade setups.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCROLL OBSERVER (same behaviour, just cleaner) -->
+        <script>
+          (function () {
+            const premiumCards = document.querySelectorAll(".gf-premium-card");
+
+            // Use Intersection Observer with threshold 0.2 (like original)
+            const premiumObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    // optional: unobserve after animation to reduce overhead
+                    premiumObserver.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.2 },
+            );
+
+            premiumCards.forEach((card) => {
+              premiumObserver.observe(card);
+            });
+
+            // small fallback: if cards already visible on load (e.g. fast connection)
+            // ensure they get .show class as well; but observer handles it.
+            // Also manually check if some cards are intersecting before observer registers
+            if (premiumCards.length) {
+              const checkVisibility = () => {
+                premiumCards.forEach((card) => {
+                  const rect = card.getBoundingClientRect();
+                  const windowHeight =
+                    window.innerHeight || document.documentElement.clientHeight;
+                  if (
+                    rect.top < windowHeight - 100 &&
+                    !card.classList.contains("show")
+                  ) {
+                    card.classList.add("show");
+                  }
+                });
+              };
+              window.addEventListener("load", checkVisibility);
+              window.addEventListener("resize", checkVisibility);
+              setTimeout(checkVisibility, 200);
+            }
+          })();
+        </script>
+      </body>
+    </html>
+    <!-- --------------section -------------- -->
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>Gujju Forex | Why Choose Us — Moving Background</title>
+
+        <!-- Google Fonts + Font Awesome 6 (icons only, no emojis) -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: #000000;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+          }
+
+          /* ========= MOVING GRADIENT BACKGROUND SECTION ========= */
+          /* Animated gradient that flows smoothly — clean, modern, and dynamic but not overwhelming */
+          .gf-why-section {
+            position: relative;
+            background: radial-gradient(circle at 20% 30%, #0a0a0a, #000000);
+            /* fallback solid, then overlay moving gradient for depth */
+            padding: 70px 24px;
+            overflow: hidden;
+            isolation: isolate;
+          }
+
+          /* Animated gradient layer — subtle movement, keeps content readable */
+          .gf-why-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+              125deg,
+              rgba(0, 0, 0, 0.92) 0%,
+              rgba(10, 8, 2, 0.88) 30%,
+              rgba(212, 175, 55, 0.07) 55%,
+              rgba(0, 0, 0, 0.92) 85%
+            );
+            background-size: 300% 300%;
+            animation: richMove 22s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          /* Secondary moving light veil — very subtle shimmer that adds 'moving' feel without distraction */
+          .gf-why-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+              ellipse at 40% 50%,
+              rgba(212, 175, 55, 0.03) 0%,
+              transparent 70%
+            );
+            background-size: 200% 200%;
+            animation: softPulse 14s ease infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+          }
+
+          @keyframes richMove {
+            0% {
+              background-position: 0% 0%;
+            }
+            25% {
+              background-position: 50% 30%;
+            }
+            50% {
+              background-position: 100% 60%;
+            }
+            75% {
+              background-position: 50% 80%;
+            }
+            100% {
+              background-position: 0% 0%;
+            }
+          }
+
+          @keyframes softPulse {
+            0% {
+              opacity: 0.2;
+              transform: scale(1);
+            }
+            100% {
+              opacity: 0.6;
+              transform: scale(1.2);
+            }
+          }
+
+          /* keep content above the moving backgrounds */
+          .gf-why-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+          }
+
+          /* ========= LEFT CONTENT ========= */
+          .gf-why-left h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 28px;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+          }
+
+          .gf-why-left h2 span {
+            color: #d4af37;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e6c458 0%, #d4af37 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+          }
+
+          /* Feature grid - smaller, cleaner */
+          .gf-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 28px;
+            margin: 28px 0 24px 0;
+          }
+
+          .gf-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e0e0e0;
+            padding: 6px 0;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(0px);
+          }
+
+          .gf-feature i {
+            font-size: 1rem;
+            color: #d4af37;
+            width: 22px;
+            text-align: center;
+            flex-shrink: 0;
+            transition:
+              transform 0.2s,
+              color 0.2s;
+          }
+
+          .gf-feature:hover {
+            color: #ffffff;
+            transform: translateX(3px);
+          }
+
+          .gf-feature:hover i {
+            color: #f3d96b;
+            transform: scale(1.05);
+          }
+
+          /* Paragraphs - smaller, more readable */
+          .gf-why-left p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #cacaca;
+            margin-bottom: 16px;
+          }
+
+          .gf-why-left p strong {
+            color: #d4af37;
+            font-weight: 600;
+          }
+
+          /* subtle divider for clarity */
+          .gf-divider {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(
+              90deg,
+              #d4af37,
+              rgba(212, 175, 55, 0.2)
+            );
+            margin: 20px 0 16px 0;
+            opacity: 0.7;
+          }
+
+          /* ========= RIGHT - JUST PHOTO, NO BOX, NO SHADOW ========= */
+          .gf-image-wrapper {
+            line-height: 0;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+          }
+
+          .gf-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+            filter: brightness(1) contrast(1.02);
+            transition: filter 0.4s;
+          }
+
+          .gf-image-wrapper img:hover {
+            filter: brightness(1.02) contrast(1.04);
+          }
+
+          /* ========= RESPONSIVE: content then image ========= */
+          @media (max-width: 900px) {
+            .gf-why-container {
+              grid-template-columns: 1fr;
+              gap: 40px;
+            }
+
+            /* order: content first, image second */
+            .gf-why-left {
+              order: 1;
+            }
+
+            .gf-image-wrapper {
+              order: 2;
+              max-width: 500px;
+              margin: 0 auto;
+              width: 100%;
+            }
+
+            .gf-why-left h2 {
+              font-size: 1.9rem;
+              text-align: left;
+            }
+          }
+
+          @media (max-width: 640px) {
+            .gf-why-section {
+              padding: 50px 20px;
+            }
+
+            .gf-why-left h2 {
+              font-size: 1.7rem;
+            }
+
+            .gf-feature-grid {
+              grid-template-columns: 1fr;
+              gap: 10px;
+            }
+
+            .gf-feature {
+              font-size: 0.8rem;
+              padding: 5px 0;
+            }
+
+            .gf-why-left p {
+              font-size: 0.8rem;
+            }
+
+            .gf-divider {
+              margin: 16px 0 12px 0;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .gf-why-left h2 {
+              font-size: 1.5rem;
+            }
+
+            .gf-feature i {
+              font-size: 0.9rem;
+              width: 20px;
+            }
+          }
+
+          /* subtle mouse-follow glow effect (optional, but keeps it modern & "moving" interaction) */
+          .gf-why-section {
+            cursor: default;
+          }
+        </style>
+      </head>
+      <body>
+        <section class="gf-why-section">
+          <div class="gf-why-container">
+            <!-- LEFT: content area (clean & readable) -->
+            <div class="gf-why-left">
+              <h2>Why Choose <span>Gujju Forex</span></h2>
+
+              <!-- feature list with icons, no emojis -->
+              <div class="gf-feature-grid">
+                <div class="gf-feature">
+                  <i class="fas fa-certificate"></i> Certified Trading Company
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-headset"></i> 24×7 Expert Support
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-chart-line"></i> High Quality Market Research
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-clock"></i> Time Saving Trade Signals
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-hand-holding-usd"></i> Trusted Investment
+                  Guidance
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-lightbulb"></i> Innovation With Profit Focus
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-users"></i> Professional Trading Team
+                </div>
+                <div class="gf-feature">
+                  <i class="fas fa-graduation-cap"></i> Advanced Learning System
+                </div>
+              </div>
+
+              <div class="gf-divider"></div>
+
+              <p>
+                <strong>Gujju Forex</strong> provides transparent, data-driven
+                trading solutions to help traders grow confidently in global
+                markets.
+              </p>
+
+              <p>
+                Members receive real-time BUY & SELL alerts with clear entry,
+                stop-loss, and profit targets — designed for consistent growth.
+              </p>
+            </div>
+
+            <!-- RIGHT: just the photo, no box, no border, no shadow -->
+            <div class="gf-image-wrapper">
+              <img
+                src="https://gujjuforex.com/wp-content/uploads/2026/01/GUJJU-WEB-IMAGE-01-scaled.png"
+                alt="Gujju Forex trading platform visual"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- optional tiny script to enhance depth with subtle parallax-like "movement" on mousemove (purely aesthetic but aligns with moving bg request) -->
+        <script>
+          (function () {
+            // add ultra-light mouse interaction to the background gradients (only for immersive "moving" feel)
+            const section = document.querySelector(".gf-why-section");
+            if (!section) return;
+
+            // We'll dynamically shift the gradient's pseudo-element position slightly based on mouse coordinates.
+            // this gives a "living background" feel without overwhelming the content.
+            // only if mouse moves on section, and only if device is not touch-only (optional)
+            let ticking = false;
+
+            const beforeElem = getComputedStyle(section, "::before");
+            // We can adjust background-position of the pseudo-element dynamically via custom property.
+            // simpler: create a CSS variable and update transform/background position?
+            // To keep performance smooth we'll add a data attribute and animate the background position.
+            // However the pseudo-element gradient is already animated, but we add subtle extra parallax.
+            // to avoid conflict we use a second layer: not necessary but fun. We'll update background-position of a custom var?
+
+            // Better approach: create a separate moving gradient element that follows mouse? That might be heavy.
+            // Instead just use a minimal mousemove effect that slightly shifts the ::before background-position offset.
+            // We'll apply inline style to section with custom properties that the pseudo-element uses.
+            // Modify CSS to use custom properties for background-position offset.
+            const style = document.createElement("style");
+            style.textContent = `
+        .gf-why-section {
+          --shift-x: 0px;
+          --shift-y: 0px;
+        }
+        .gf-why-section::before {
+          background-position: calc(0% + var(--shift-x)) calc(0% + var(--shift-y));
+          transition: background-position 0.1s ease-out;
+        }
+      `;
+            document.head.appendChild(style);
+
+            let mouseX = 0,
+              mouseY = 0;
+            let targetX = 0,
+              targetY = 0;
+
+            section.addEventListener("mousemove", (e) => {
+              const rect = section.getBoundingClientRect();
+              // normalize mouse position relative to section (0 to 1)
+              const x = (e.clientX - rect.left) / rect.width;
+              const y = (e.clientY - rect.top) / rect.height;
+              // map to shift range: -1.5% to 1.5% shift in background position
+              targetX = (x - 0.5) * 3; // max ±1.5%
+              targetY = (y - 0.5) * 2; // max ±1%
+              if (!ticking) {
+                requestAnimationFrame(() => {
+                  // smooth interpolation
+                  mouseX = mouseX * 0.85 + targetX * 0.15;
+                  mouseY = mouseY * 0.85 + targetY * 0.15;
+                  section.style.setProperty("--shift-x", mouseX + "%");
+                  section.style.setProperty("--shift-y", mouseY + "%");
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            });
+
+            section.addEventListener("mouseleave", () => {
+              // reset smoothly
+              targetX = 0;
+              targetY = 0;
+              const resetFrame = () => {
+                mouseX = mouseX * 0.9;
+                mouseY = mouseY * 0.9;
+                section.style.setProperty("--shift-x", mouseX + "%");
+                section.style.setProperty("--shift-y", mouseY + "%");
+                if (Math.abs(mouseX) > 0.05 || Math.abs(mouseY) > 0.05) {
+                  requestAnimationFrame(resetFrame);
+                } else {
+                  section.style.setProperty("--shift-x", "0%");
+                  section.style.setProperty("--shift-y", "0%");
+                }
+              };
+              requestAnimationFrame(resetFrame);
+            });
+          })();
+        </script>
+      </body>
+    </html>
+    <!-- ---------------faq----------  -->
+    <style>
+      /* ===============================
+   PREMIUM FAQ SECTION
+================================ */
+
+      #gf-faq-section {
+        padding: 30px 10px;
+        background: #ffffff;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* CONTAINER */
+      .gf-faq-wrap {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      /* TITLE */
+      .gf-faq-title {
+        text-align: center;
+        font-size: 42px;
+        font-weight: 700;
+        color: #b8962e;
+        margin-bottom: 50px;
+      }
+
+      /* MAIN BOX */
+      .gf-faq-box {
+        background: linear-gradient(135deg, #0b0b0b, #000000);
+        border-radius: 22px;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+      }
+
+      /* LEFT INFO */
+      .gf-faq-left h3 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        color: #ffffff;
+      }
+
+      .gf-faq-left p {
+        font-size: 15px;
+        color: #d1d1d1;
+        line-height: 1.7;
+        margin-bottom: 28px;
+      }
+
+      /* BUTTON */
+      .gf-faq-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 20px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        color: #333;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        transition: 0.35s ease;
+      }
+
+      .gf-faq-btn:hover {
+        color: #000;
+        background: linear-gradient(135deg, #d4af37, #f5d76e);
+        box-shadow: 0 0 35px rgba(212, 175, 55, 0.7);
+      }
+
+      /* RIGHT FAQ */
+      .gf-faq-list {
+        border-left: 1px dashed rgba(212, 175, 55, 0.4);
+        padding-left: 30px;
+      }
+
+      .gf-faq-item {
+        background: #151515;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.25);
+      }
+
+      .gf-faq-question {
+        padding: 16px 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .gf-faq-question span {
+        color: #d4af37;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      .gf-faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        background: #0e0e0e;
+        padding: 0 20px;
+        font-size: 14px;
+        color: #cfcfcf;
+        line-height: 1.7;
+        transition:
+          max-height 0.35s ease,
+          padding 0.35s ease;
+      }
+
+      /* ACTIVE */
+      .gf-faq-item.active .gf-faq-answer {
+        max-height: 200px;
+        padding: 14px 20px 18px;
+      }
+
+      .gf-faq-item.active .gf-faq-question span {
+        transform: rotate(90deg);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .gf-faq-box {
+          grid-template-columns: 1fr;
+          padding: 35px;
+        }
+
+        .gf-faq-list {
+          border-left: none;
+          padding-left: 0;
+        }
+
+        .gf-faq-title {
+          font-size: 32px;
+        }
+
+        .gf-faq-left h3 {
+          font-size: 26px;
+        }
+      }
+    </style>
+
+    <section id="gf-faq-section">
+      <div class="gf-faq-wrap">
+        <div class="gf-faq-title">FAQs</div>
+
+        <div class="gf-faq-box">
+          <!-- LEFT -->
+          <div class="gf-faq-left">
+            <h3>LOOKING FOR ANSWERS?</h3>
+            <p>
+              We’ve written out some of our most frequently asked questions to
+              help you understand our Forex signals and services better.
+            </p>
+
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="gf-faq-btn">
+              Join Our Free Channel →
+            </a>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="gf-faq-list">
+            <div class="gf-faq-item">
+              <div class="gf-faq-question">
+                What do you provide in the Premium Channel?
+                <span>›</span>
+              </div>
+              <div class="gf-faq-answer">
+                We provide ultra-accurate Gold trading signals based on ICT &
+                Smart Money Concepts, including clear entry, stop-loss, and
+                target levels with proper risk management.
+              </div>
+            </div>
+
+            <div class="gf-faq-item">
+              <div class="gf-faq-question">
+                Are the signals suitable for beginners?
+                <span>›</span>
+              </div>
+              <div class="gf-faq-answer">
+                Yes. We follow the rule “First Learn, Then Earn”, making our
+                setups easy to understand even for beginners.
+              </div>
+            </div>
+
+            <div class="gf-faq-item">
+              <div class="gf-faq-question">
+                Which brokers do you support?
+                <span>›</span>
+              </div>
+              <div class="gf-faq-answer">
+                We support trusted and regulated brokers like XM & Exness, known
+                for fast execution, tight spreads, and reliable withdrawals.
+              </div>
+            </div>
+
+            <div class="gf-faq-item">
+              <div class="gf-faq-question">
+                Is there any guaranteed profit?
+                <span>›</span>
+              </div>
+              <div class="gf-faq-answer">
+                No. Trading involves risk. We focus on high-probability setups,
+                proper risk-reward, and capital protection — not fake
+                guarantees.
+              </div>
+            </div>
+
+            <div class="gf-faq-item">
+              <div class="gf-faq-question">
+                What is the minimum deposit required?
+                <span>›</span>
+              </div>
+              <div class="gf-faq-answer">
+                The minimum deposit is $100, and you can receive a 100% bonus
+                which is usable even during drawdown (broker terms apply).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".gf-faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const parent = item.parentElement;
+          document.querySelectorAll(".gf-faq-item").forEach((i) => {
+            if (i !== parent) i.classList.remove("active");
+          });
+          parent.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

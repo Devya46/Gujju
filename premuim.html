@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Gold Standard VIP | Elite Trading Hub</title>
+    <!-- Font Awesome 6 (Sharp & Solid where appropriate) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #fefefe;
+      }
+
+      /* MAIN SECTION - pure white canvas */
+      .vip-elite-section {
+        background: #ffffff;
+        padding: 56px 24px;
+        width: 100%;
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          sans-serif;
+      }
+
+      /* LUXURY DARK CONTAINER with subtle floating animation */
+      .vip-luxury-core {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: radial-gradient(ellipse at 25% 20%, #141414, #010101);
+        border-radius: 48px;
+        padding: 44px 44px;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        color: #ffffff;
+        box-shadow:
+          0 30px 50px -18px rgba(0, 0, 0, 0.55),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(245, 197, 66, 0.3);
+        transition: all 0.3s ease;
+        animation: smoothEntry 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      @keyframes smoothEntry {
+        0% {
+          opacity: 0;
+          transform: translateY(24px) scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* LEFT SIDE */
+      .vip-left-side {
+        flex: 1.2 1 54%;
+      }
+
+      .vip-left-side h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        letter-spacing: -0.3px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(130deg, #fff, #f5e1b0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .vip-left-side h2 i {
+        background: none;
+        color: #f5c542;
+        font-size: 32px;
+        filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.4));
+      }
+
+      /* feature rows with soft animation on scroll/hover */
+      .feature-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.25s ease-in-out;
+      }
+
+      .feature-list-item:hover {
+        background: linear-gradient(
+          90deg,
+          rgba(245, 197, 66, 0.05),
+          transparent
+        );
+        padding-left: 12px;
+        border-radius: 24px;
+        border-bottom-color: rgba(245, 197, 66, 0.25);
+        transform: translateX(5px);
+      }
+
+      .feature-icon-text {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 15.5px;
+        font-weight: 500;
+        color: #f1f1f1;
+      }
+
+      .feature-icon-text i {
+        width: 28px;
+        font-size: 1.25rem;
+        color: #f5c542;
+        text-align: center;
+        transition: transform 0.2s;
+      }
+
+      .feature-list-item:hover .feature-icon-text i {
+        transform: scale(1.1);
+      }
+
+      .premium-tag {
+        background: rgba(245, 197, 66, 0.14);
+        padding: 5px 14px;
+        border-radius: 60px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #f5c542;
+        letter-spacing: 0.2px;
+        backdrop-filter: blur(2px);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 0.5px solid rgba(245, 197, 66, 0.2);
+      }
+
+      /* elegant tagline */
+      .elegant-tagline {
+        margin-top: 28px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #f5c542;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(245, 197, 66, 0.08);
+        padding: 7px 22px;
+        border-radius: 60px;
+        backdrop-filter: blur(4px);
+        transition: all 0.2s;
+      }
+
+      .elegant-tagline i {
+        font-size: 0.95rem;
+        animation: gentlePulse 2s infinite;
+      }
+
+      @keyframes gentlePulse {
+        0% {
+          opacity: 0.7;
+          transform: scale(0.98);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* BROKER BUTTONS refined */
+      .broker-flex-group {
+        margin-top: 32px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-gold-soft {
+        flex: 1;
+        min-width: 115px;
+        text-align: center;
+        padding: 10px 18px;
+        font-size: 14px;
+        font-weight: 700;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1.5px solid #f5c542;
+        color: #f5c542;
+        border-radius: 60px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        backdrop-filter: blur(4px);
+      }
+
+      .btn-gold-soft i {
+        font-size: 0.85rem;
+        transition: transform 0.2s;
+      }
+
+      .btn-gold-soft:hover {
+        background: #f5c542;
+        color: #0a0a0a;
+        border-color: #ffdd99;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px -8px rgba(245, 197, 66, 0.4);
+      }
+
+      .btn-gold-soft:hover i {
+        transform: translateX(5px);
+        color: #000;
+      }
+
+      /* RIGHT CARD - enhanced with shimmer and depth */
+      .vip-card-right {
+        flex: 0.9 1 38%;
+        background: radial-gradient(ellipse at 50% 25%, #1e1e1e, #030303);
+        border: 1.8px solid rgba(245, 197, 66, 0.7);
+        border-radius: 40px;
+        padding: 34px 28px;
+        text-align: center;
+        backdrop-filter: blur(2px);
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* subtle animated shine */
+      .vip-card-right::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 180%;
+        height: 180%;
+        background: radial-gradient(
+          circle,
+          rgba(245, 197, 66, 0.08),
+          transparent 70%
+        );
+        transform: rotate(25deg);
+        animation: softShimmer 8s infinite linear;
+        pointer-events: none;
+      }
+
+      @keyframes softShimmer {
+        0% {
+          transform: translateX(-30%) rotate(25deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateX(15%) rotate(25deg);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateX(-30%) rotate(25deg);
+          opacity: 0.3;
+        }
+      }
+
+      .vip-card-right:hover {
+        transform: translateY(-5px);
+        border-color: #f5c542;
+        box-shadow:
+          0 28px 40px -15px rgba(0, 0, 0, 0.7),
+          0 0 12px rgba(245, 197, 66, 0.3);
+      }
+
+      .vip-card-right h3 {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .vip-card-right h3 i {
+        color: #f5c542;
+        font-size: 26px;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+      }
+
+      .big-bonus {
+        font-size: 48px;
+        font-weight: 900;
+        background: linear-gradient(135deg, #f5c542, #ffdd99, #e6b422);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin: 14px 0 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .vip-card-right p {
+        font-size: 14px;
+        color: #dbdbdb;
+        line-height: 1.55;
+        margin: 16px 0;
+      }
+
+      .vip-card-right p i {
+        color: #f5c542;
+        margin-right: 6px;
+        width: 22px;
+      }
+
+      .vip-card-right p strong {
+        color: #f5c542;
+        font-weight: 800;
+      }
+
+      /* primary CTA with micro animation */
+      .cta-telegram-lux {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 14px;
+        padding: 13px 24px;
+        background: linear-gradient(100deg, #f5c542, #e0ae28);
+        color: #0a0a0a;
+        font-weight: 800;
+        font-size: 15px;
+        border-radius: 80px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        border: none;
+        letter-spacing: 0.3px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-telegram-lux i {
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+
+      .cta-telegram-lux:hover {
+        background: linear-gradient(100deg, #ffdc7a, #f5c542);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 24px -8px rgba(245, 197, 66, 0.45);
+      }
+
+      .cta-telegram-lux:hover i {
+        transform: translateX(6px);
+      }
+
+      .partner-footer {
+        margin-top: 22px;
+        font-size: 12.5px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 12px 12px;
+        border-radius: 32px;
+        width: 100%;
+        backdrop-filter: blur(3px);
+        border: 0.5px solid rgba(245, 197, 66, 0.15);
+      }
+
+      .partner-footer i {
+        color: #f5c542;
+        width: 24px;
+        margin-right: 6px;
+      }
+
+      .partner-footer strong {
+        font-weight: 800;
+        color: #f5c542;
+        background: rgba(245, 197, 66, 0.15);
+        padding: 3px 10px;
+        border-radius: 40px;
+        font-size: 11.5px;
+      }
+
+      /* FULL RESPONSIVE */
+      @media (max-width: 900px) {
+        .vip-elite-section {
+          padding: 44px 20px;
+        }
+        .vip-luxury-core {
+          padding: 34px 30px;
+          gap: 34px;
+        }
+        .vip-left-side h2 {
+          font-size: 27px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .vip-elite-section {
+          padding: 38px 16px;
+        }
+        .vip-luxury-core {
+          padding: 28px 22px;
+          flex-direction: column;
+          border-radius: 40px;
+        }
+        .vip-left-side,
+        .vip-card-right {
+          flex: 1 1 100%;
+        }
+        .vip-left-side h2 {
+          font-size: 24px;
+          justify-content: center;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .feature-list-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+          padding: 12px 0;
+        }
+        .feature-icon-text {
+          font-size: 14px;
+          width: 100%;
+        }
+        .premium-tag {
+          font-size: 11px;
+          align-self: flex-start;
+        }
+        .elegant-tagline {
+          font-size: 13px;
+          margin-top: 20px;
+        }
+        .broker-flex-group {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .btn-gold-soft {
+          width: 100%;
+          padding: 10px 16px;
+        }
+        .vip-card-right {
+          padding: 28px 22px;
+        }
+        .big-bonus {
+          font-size: 40px;
+        }
+        .vip-card-right h3 {
+          font-size: 22px;
+        }
+        .vip-card-right p {
+          font-size: 13px;
+        }
+        .cta-telegram-lux {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .vip-elite-section {
+          padding: 30px 12px;
+        }
+        .vip-luxury-core {
+          padding: 22px 18px;
+          border-radius: 32px;
+        }
+        .vip-left-side h2 {
+          font-size: 21px;
+          gap: 6px;
+        }
+        .vip-left-side h2 i {
+          font-size: 24px;
+        }
+        .feature-icon-text {
+          gap: 10px;
+          font-size: 13px;
+        }
+        .feature-icon-text i {
+          width: 24px;
+          font-size: 1rem;
+        }
+        .premium-tag {
+          font-size: 10px;
+          padding: 3px 10px;
+        }
+        .big-bonus {
+          font-size: 34px;
+        }
+        .partner-footer {
+          font-size: 11px;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        .vip-luxury-core {
+          max-width: 1420px;
+          padding: 52px 56px;
+        }
+        .vip-left-side h2 {
+          font-size: 32px;
+        }
+        .feature-icon-text {
+          font-size: 16px;
+        }
+        .big-bonus {
+          font-size: 52px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="vip-elite-section">
+      <div class="vip-luxury-core">
+        <!-- LEFT: features and broker links (all links intact) -->
+        <div class="vip-left-side">
+          <h2>
+            <i class="fas fa-crown"></i>
+            Join My Premium Channel
+          </h2>
+
+          <!-- Feature 1 -->
+          <div class="feature-list-item">
+            <div class="feature-icon-text">
+              <i class="fas fa-chart-line"></i>
+              <span>Gold Killer | ICT & SMC Trader</span>
+            </div>
+            <div class="premium-tag">
+              <i class="fas fa-bullseye"></i> Ultra Accuracy
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-list-item">
+            <div class="feature-icon-text">
+              <i class="fas fa-book-open"></i>
+              <span>First Learn, then Earn</span>
+            </div>
+            <div class="premium-tag">
+              <i class="fas fa-chart-simple"></i> Smart Trading
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-list-item">
+            <div class="feature-icon-text">
+              <i class="fas fa-bolt"></i>
+              <span>High Accuracy Signals</span>
+            </div>
+            <div class="premium-tag">
+              <i class="fas fa-shield-haltered"></i> Risk Managed
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-list-item">
+            <div class="feature-icon-text">
+              <i class="fas fa-handshake"></i>
+              <span>Trusted Brokers</span>
+            </div>
+            <div class="premium-tag">
+              <i class="fas fa-building-columns"></i> XM & Exness
+            </div>
+          </div>
+
+          <div class="elegant-tagline">
+            <i class="fas fa-fire-flame-curved"></i> Level up your trading
+            journey now!
+          </div>
+
+          <!-- BROKER BUTTONS (ALL ORIGINAL LINKS) -->
+          <div class="broker-flex-group">
+            <a
+              href="https://one.exnesstrack.org/a/76cl5o2qff"
+              target="_blank"
+              class="btn-gold-soft"
+            >
+              <i class="fas fa-arrow-right-to-bracket"></i> Exness
+            </a>
+            <a
+              href="https://vigco.co/la-com/GUJJUFX"
+              target="_blank"
+              class="btn-gold-soft"
+            >
+              <i class="fas fa-arrow-right-to-bracket"></i> Vantage
+            </a>
+            <a
+              href="https://clicks.pipaffiliates.com/c?c=1064870&l=en&p=1"
+              target="_blank"
+              class="btn-gold-soft"
+            >
+              <i class="fas fa-arrow-right-to-bracket"></i> XM
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD: Premium Bonus + Telegram Access -->
+        <div class="vip-card-right">
+          <h3>
+            <i class="fas fa-gem"></i>
+            Premium Access
+            <i class="fas fa-star-of-life"></i>
+          </h3>
+          <div class="big-bonus">100% BONUS</div>
+          <p>
+            <i class="fas fa-circle-dollar-to-slot"></i> Deposit
+            <strong>$100–200</strong> & get instant premium access.<br />
+            <i class="fas fa-chart-line"></i> Bonus usable even during
+            drawdown.<br />
+            <i class="fas fa-brain"></i> Trade with confidence & proper setups.
+          </p>
+
+          <!-- TELEGRAM LINK (PRESERVED) -->
+          <a
+            href="https://t.me/TeamGujjuInternational"
+            target="_blank"
+            class="cta-telegram-lux"
+          >
+            <i class="fab fa-telegram"></i> Become Premium Now
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <div class="partner-footer">
+            <i class="fas fa-qrcode"></i> Partner Code: <strong>Q224C</strong
+            ><br />
+            <i class="fab fa-telegram-plane"></i> DM:
+            <strong>@TeamGujjuInternational</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
