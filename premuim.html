@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Gold Standard VIP | Elite Trading Hub</title>
-    <!-- Font Awesome 6 (Sharp & Solid where appropriate) -->
+    <title>Gujju Forex | Premium Features</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
       * {
@@ -20,629 +19,771 @@
       }
 
       body {
-        background: #fefefe;
+        background: #f8fafc;
       }
 
-      /* MAIN SECTION - pure white canvas */
-      .vip-elite-section {
-        background: #ffffff;
-        padding: 56px 24px;
-        width: 100%;
+      /* ==============================
+         GUJJU FOREX – PREMIUM SECTION
+         ENHANCED VERSION WITH ALL IMPROVEMENTS
+    ================================ */
+      #gf-premium-includes {
+        padding: 80px 24px;
+        background: linear-gradient(135deg, #ffffff 0%, #faf8f0 100%);
         font-family:
           "Inter",
           system-ui,
           -apple-system,
           "Segoe UI",
-          Roboto,
-          "Helvetica Neue",
           sans-serif;
-      }
-
-      /* LUXURY DARK CONTAINER with subtle floating animation */
-      .vip-luxury-core {
-        max-width: 1300px;
-        margin: 0 auto;
-        background: radial-gradient(ellipse at 25% 20%, #141414, #010101);
-        border-radius: 48px;
-        padding: 44px 44px;
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-        color: #ffffff;
-        box-shadow:
-          0 30px 50px -18px rgba(0, 0, 0, 0.55),
-          inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(245, 197, 66, 0.3);
-        transition: all 0.3s ease;
-        animation: smoothEntry 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-      }
-
-      @keyframes smoothEntry {
-        0% {
-          opacity: 0;
-          transform: translateY(24px) scale(0.98);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      /* LEFT SIDE */
-      .vip-left-side {
-        flex: 1.2 1 54%;
-      }
-
-      .vip-left-side h2 {
-        font-size: 30px;
-        font-weight: 700;
-        margin-bottom: 28px;
-        letter-spacing: -0.3px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: linear-gradient(130deg, #fff, #f5e1b0);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-      }
-
-      .vip-left-side h2 i {
-        background: none;
-        color: #f5c542;
-        font-size: 32px;
-        filter: drop-shadow(0 0 4px rgba(245, 197, 66, 0.4));
-      }
-
-      /* feature rows with soft animation on scroll/hover */
-      .feature-list-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        transition: all 0.25s ease-in-out;
-      }
-
-      .feature-list-item:hover {
-        background: linear-gradient(
-          90deg,
-          rgba(245, 197, 66, 0.05),
-          transparent
-        );
-        padding-left: 12px;
-        border-radius: 24px;
-        border-bottom-color: rgba(245, 197, 66, 0.25);
-        transform: translateX(5px);
-      }
-
-      .feature-icon-text {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 15.5px;
-        font-weight: 500;
-        color: #f1f1f1;
-      }
-
-      .feature-icon-text i {
-        width: 28px;
-        font-size: 1.25rem;
-        color: #f5c542;
-        text-align: center;
-        transition: transform 0.2s;
-      }
-
-      .feature-list-item:hover .feature-icon-text i {
-        transform: scale(1.1);
-      }
-
-      .premium-tag {
-        background: rgba(245, 197, 66, 0.14);
-        padding: 5px 14px;
-        border-radius: 60px;
-        font-size: 12px;
-        font-weight: 600;
-        color: #f5c542;
-        letter-spacing: 0.2px;
-        backdrop-filter: blur(2px);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        border: 0.5px solid rgba(245, 197, 66, 0.2);
-      }
-
-      /* elegant tagline */
-      .elegant-tagline {
-        margin-top: 28px;
-        font-size: 14px;
-        font-weight: 600;
-        color: #f5c542;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(245, 197, 66, 0.08);
-        padding: 7px 22px;
-        border-radius: 60px;
-        backdrop-filter: blur(4px);
-        transition: all 0.2s;
-      }
-
-      .elegant-tagline i {
-        font-size: 0.95rem;
-        animation: gentlePulse 2s infinite;
-      }
-
-      @keyframes gentlePulse {
-        0% {
-          opacity: 0.7;
-          transform: scale(0.98);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* BROKER BUTTONS refined */
-      .broker-flex-group {
-        margin-top: 32px;
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .btn-gold-soft {
-        flex: 1;
-        min-width: 115px;
-        text-align: center;
-        padding: 10px 18px;
-        font-size: 14px;
-        font-weight: 700;
-        background: rgba(0, 0, 0, 0.55);
-        border: 1.5px solid #f5c542;
-        color: #f5c542;
-        border-radius: 60px;
-        text-decoration: none;
-        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        backdrop-filter: blur(4px);
-      }
-
-      .btn-gold-soft i {
-        font-size: 0.85rem;
-        transition: transform 0.2s;
-      }
-
-      .btn-gold-soft:hover {
-        background: #f5c542;
-        color: #0a0a0a;
-        border-color: #ffdd99;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px -8px rgba(245, 197, 66, 0.4);
-      }
-
-      .btn-gold-soft:hover i {
-        transform: translateX(5px);
-        color: #000;
-      }
-
-      /* RIGHT CARD - enhanced with shimmer and depth */
-      .vip-card-right {
-        flex: 0.9 1 38%;
-        background: radial-gradient(ellipse at 50% 25%, #1e1e1e, #030303);
-        border: 1.8px solid rgba(245, 197, 66, 0.7);
-        border-radius: 40px;
-        padding: 34px 28px;
-        text-align: center;
-        backdrop-filter: blur(2px);
-        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
-        transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
       }
 
-      /* subtle animated shine */
-      .vip-card-right::before {
+      /* Decorative background elements */
+      #gf-premium-includes::before {
         content: "";
         position: absolute;
         top: -50%;
-        left: -60%;
-        width: 180%;
-        height: 180%;
+        right: -20%;
+        width: 80%;
+        height: 80%;
         background: radial-gradient(
           circle,
-          rgba(245, 197, 66, 0.08),
+          rgba(212, 175, 55, 0.03) 0%,
           transparent 70%
         );
-        transform: rotate(25deg);
-        animation: softShimmer 8s infinite linear;
+        border-radius: 50%;
         pointer-events: none;
       }
 
-      @keyframes softShimmer {
-        0% {
-          transform: translateX(-30%) rotate(25deg);
-          opacity: 0.3;
-        }
-        50% {
-          transform: translateX(15%) rotate(25deg);
-          opacity: 0.6;
-        }
-        100% {
-          transform: translateX(-30%) rotate(25deg);
-          opacity: 0.3;
-        }
+      #gf-premium-includes::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.02) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
       }
 
-      .vip-card-right:hover {
-        transform: translateY(-5px);
-        border-color: #f5c542;
-        box-shadow:
-          0 28px 40px -15px rgba(0, 0, 0, 0.7),
-          0 0 12px rgba(245, 197, 66, 0.3);
+      /* CONTAINER */
+      .gf-premium-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
       }
 
-      .vip-card-right h3 {
-        font-size: 24px;
+      /* HEADING */
+      .gf-premium-heading {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .premium-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: #d4af37;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.12),
+          rgba(212, 175, 55, 0.06)
+        );
+        padding: 6px 16px;
+        border-radius: 50px;
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .gf-premium-heading h2 {
+        font-size: 42px;
         font-weight: 800;
+        letter-spacing: -0.02em;
         margin-bottom: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
+        color: #0a0c10;
       }
 
-      .vip-card-right h3 i {
-        color: #f5c542;
-        font-size: 26px;
-        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-      }
-
-      .big-bonus {
-        font-size: 48px;
-        font-weight: 900;
-        background: linear-gradient(135deg, #f5c542, #ffdd99, #e6b422);
+      .gf-premium-heading h2 span {
+        background: linear-gradient(135deg, #c9a53b 0%, #e4bf5e 100%);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        margin: 14px 0 12px;
-        letter-spacing: -0.5px;
-      }
-
-      .vip-card-right p {
-        font-size: 14px;
-        color: #dbdbdb;
-        line-height: 1.55;
-        margin: 16px 0;
-      }
-
-      .vip-card-right p i {
-        color: #f5c542;
-        margin-right: 6px;
-        width: 22px;
-      }
-
-      .vip-card-right p strong {
-        color: #f5c542;
-        font-weight: 800;
-      }
-
-      /* primary CTA with micro animation */
-      .cta-telegram-lux {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 14px;
-        padding: 13px 24px;
-        background: linear-gradient(100deg, #f5c542, #e0ae28);
-        color: #0a0a0a;
-        font-weight: 800;
-        font-size: 15px;
-        border-radius: 80px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-        width: 100%;
-        border: none;
-        letter-spacing: 0.3px;
         position: relative;
+        display: inline-block;
+      }
+
+      .gf-premium-heading h2 span::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      }
+
+      .gf-premium-heading p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #4b5563;
+        max-width: 680px;
+        margin: 0 auto;
+        font-weight: 400;
+      }
+
+      /* GRID */
+      .gf-premium-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      /* ======================
+         PREMIUM CARD (ENHANCED)
+    ======================= */
+      .gf-premium-card {
+        position: relative;
+        background: #ffffff !important;
+        border-radius: 28px;
+        padding: 32px 28px 34px 28px;
+        border: 1px solid rgba(212, 175, 55, 0.15);
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+        overflow: hidden;
+        cursor: pointer;
+
+        /* LEFT → RIGHT ANIMATION */
+        opacity: 0;
+        transform: translateX(-80px);
+        transition: all 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      /* Ripple effect on click */
+      .gf-premium-card:active::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.3);
+        transform: translate(-50%, -50%);
+        animation: ripple 0.6s ease-out;
+        pointer-events: none;
+      }
+
+      @keyframes ripple {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 0.5;
+        }
+        100% {
+          width: 400px;
+          height: 400px;
+          opacity: 0;
+        }
+      }
+
+      /* SHOW STATE */
+      .gf-premium-card.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* STAGGER DELAY */
+      .gf-premium-card:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+      .gf-premium-card:nth-child(2) {
+        transition-delay: 0.12s;
+      }
+      .gf-premium-card:nth-child(3) {
+        transition-delay: 0.19s;
+      }
+      .gf-premium-card:nth-child(4) {
+        transition-delay: 0.26s;
+      }
+      .gf-premium-card:nth-child(5) {
+        transition-delay: 0.33s;
+      }
+      .gf-premium-card:nth-child(6) {
+        transition-delay: 0.4s;
+      }
+
+      /* Gold top line (enhanced) */
+      .gf-premium-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 15%;
+        width: 70%;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #d4af37,
+          #e8c95a,
+          #d4af37,
+          transparent
+        );
+        opacity: 0;
+        border-radius: 3px;
+        transition: opacity 0.4s ease;
+      }
+
+      /* Featured card badge */
+      .gf-premium-card.featured {
+        border: 2px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 25px 40px -12px rgba(212, 175, 55, 0.15);
+      }
+
+      .card-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: linear-gradient(135deg, #d4af37, #e8c95a);
+        color: #1a1a1a;
+        font-size: 0.7rem;
+        font-weight: 800;
+        padding: 5px 14px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        letter-spacing: 0.5px;
         z-index: 2;
       }
 
-      .cta-telegram-lux i {
-        font-size: 1rem;
-        transition: transform 0.2s;
+      /* Icon wrapper (enhanced) */
+      .gf-card-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.12),
+          rgba(212, 175, 55, 0.06)
+        );
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        border: 1px solid rgba(212, 175, 55, 0.1);
       }
 
-      .cta-telegram-lux:hover {
-        background: linear-gradient(100deg, #ffdc7a, #f5c542);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 24px -8px rgba(245, 197, 66, 0.45);
+      .gf-card-icon svg {
+        width: 28px;
+        height: 28px;
+        stroke-width: 1.7;
+        stroke: #b4943b;
+        fill: none;
+        transition: all 0.3s ease;
       }
 
-      .cta-telegram-lux:hover i {
-        transform: translateX(6px);
+      .gf-card-icon .fill-gold {
+        stroke: #b4943b;
+        fill: #b4943b;
+        fill-opacity: 0.15;
       }
 
-      .partner-footer {
-        margin-top: 22px;
-        font-size: 12.5px;
-        background: rgba(255, 255, 255, 0.03);
-        padding: 12px 12px;
-        border-radius: 32px;
-        width: 100%;
-        backdrop-filter: blur(3px);
-        border: 0.5px solid rgba(245, 197, 66, 0.15);
+      /* CARD TITLE */
+      .gf-premium-card h3 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #111827;
+        margin-bottom: 12px;
+        line-height: 1.3;
       }
 
-      .partner-footer i {
-        color: #f5c542;
-        width: 24px;
-        margin-right: 6px;
+      /* CARD TEXT */
+      .gf-premium-card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: #4b5563;
+        font-weight: 400;
       }
 
-      .partner-footer strong {
-        font-weight: 800;
-        color: #f5c542;
-        background: rgba(245, 197, 66, 0.15);
-        padding: 3px 10px;
-        border-radius: 40px;
-        font-size: 11.5px;
+      /* Card stats */
+      .card-stats {
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+        font-size: 0.8rem;
+        color: #6b7280;
+        padding-top: 12px;
+        border-top: 1px solid rgba(212, 175, 55, 0.1);
       }
 
-      /* FULL RESPONSIVE */
-      @media (max-width: 900px) {
-        .vip-elite-section {
-          padding: 44px 20px;
+      .card-stats span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .card-stats span::before {
+        content: "✓";
+        color: #d4af37;
+        font-weight: 700;
+      }
+
+      /* Card link */
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 18px;
+        color: #d4af37;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        letter-spacing: 0.3px;
+      }
+
+      .card-link::after {
+        content: "→";
+        transition: transform 0.2s ease;
+      }
+
+      .card-link:hover::after {
+        transform: translateX(4px);
+      }
+
+      /* HOVER EFFECT – modern lift */
+      .gf-premium-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.15);
+        border-color: rgba(212, 175, 55, 0.4);
+      }
+
+      .gf-premium-card:hover::after {
+        opacity: 0.8;
+      }
+
+      .gf-premium-card:hover .gf-card-icon {
+        background: linear-gradient(135deg, #d4af37, #e8c95a);
+        transform: scale(1.02);
+        border-color: transparent;
+      }
+
+      .gf-premium-card:hover .gf-card-icon svg {
+        stroke: #ffffff;
+        stroke-width: 1.8;
+      }
+
+      .gf-premium-card:hover .card-link {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Focus states for accessibility */
+      .gf-premium-card:focus-visible {
+        outline: 2px solid #d4af37;
+        outline-offset: 4px;
+        transform: translateY(-4px);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1024px) {
+        #gf-premium-includes {
+          padding: 60px 24px;
         }
-        .vip-luxury-core {
-          padding: 34px 30px;
-          gap: 34px;
+        .gf-premium-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
         }
-        .vip-left-side h2 {
-          font-size: 27px;
+        .gf-premium-heading h2 {
+          font-size: 34px;
+        }
+        .gf-premium-heading p {
+          font-size: 16px;
         }
       }
 
       @media (max-width: 768px) {
-        .vip-elite-section {
-          padding: 38px 16px;
+        .gf-premium-card {
+          padding: 26px 24px;
         }
-        .vip-luxury-core {
-          padding: 28px 22px;
-          flex-direction: column;
-          border-radius: 40px;
-        }
-        .vip-left-side,
-        .vip-card-right {
-          flex: 1 1 100%;
-        }
-        .vip-left-side h2 {
-          font-size: 24px;
-          justify-content: center;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-        .feature-list-item {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 8px;
-          padding: 12px 0;
-        }
-        .feature-icon-text {
-          font-size: 14px;
-          width: 100%;
-        }
-        .premium-tag {
-          font-size: 11px;
-          align-self: flex-start;
-        }
-        .elegant-tagline {
-          font-size: 13px;
-          margin-top: 20px;
-        }
-        .broker-flex-group {
-          flex-direction: column;
-          gap: 12px;
-        }
-        .btn-gold-soft {
-          width: 100%;
-          padding: 10px 16px;
-        }
-        .vip-card-right {
-          padding: 28px 22px;
-        }
-        .big-bonus {
-          font-size: 40px;
-        }
-        .vip-card-right h3 {
-          font-size: 22px;
-        }
-        .vip-card-right p {
-          font-size: 13px;
-        }
-        .cta-telegram-lux {
-          padding: 12px 20px;
-          font-size: 14px;
+        .gf-card-icon {
+          width: 50px;
+          height: 50px;
         }
       }
 
-      @media (max-width: 480px) {
-        .vip-elite-section {
-          padding: 30px 12px;
+      @media (max-width: 640px) {
+        #gf-premium-includes {
+          padding: 50px 20px;
         }
-        .vip-luxury-core {
-          padding: 22px 18px;
-          border-radius: 32px;
+        .gf-premium-heading h2 {
+          font-size: 28px;
         }
-        .vip-left-side h2 {
-          font-size: 21px;
-          gap: 6px;
+        .premium-badge {
+          font-size: 0.7rem;
+          padding: 4px 12px;
         }
-        .vip-left-side h2 i {
-          font-size: 24px;
+        .gf-premium-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
         }
-        .feature-icon-text {
-          gap: 10px;
-          font-size: 13px;
+        .gf-premium-card {
+          padding: 24px 22px;
         }
-        .feature-icon-text i {
+        .gf-card-icon {
+          width: 48px;
+          height: 48px;
+          margin-bottom: 18px;
+        }
+        .gf-card-icon svg {
           width: 24px;
-          font-size: 1rem;
+          height: 24px;
         }
-        .premium-tag {
-          font-size: 10px;
-          padding: 3px 10px;
+        .gf-premium-card h3 {
+          font-size: 1.3rem;
         }
-        .big-bonus {
-          font-size: 34px;
-        }
-        .partner-footer {
-          font-size: 11px;
+        .card-stats {
+          /* flex-direction: column; */
+          gap: 8px;
         }
       }
 
       @media (min-width: 1400px) {
-        .vip-luxury-core {
-          max-width: 1420px;
-          padding: 52px 56px;
+        .gf-premium-grid {
+          gap: 36px;
         }
-        .vip-left-side h2 {
-          font-size: 32px;
-        }
-        .feature-icon-text {
-          font-size: 16px;
-        }
-        .big-bonus {
-          font-size: 52px;
+        .gf-premium-card {
+          padding: 34px 30px;
         }
       }
     </style>
   </head>
   <body>
-    <section class="vip-elite-section">
-      <div class="vip-luxury-core">
-        <!-- LEFT: features and broker links (all links intact) -->
-        <div class="vip-left-side">
-          <h2>
-            <i class="fas fa-crown"></i>
-            Join My Premium Channel
-          </h2>
-
-          <!-- Feature 1 -->
-          <div class="feature-list-item">
-            <div class="feature-icon-text">
-              <i class="fas fa-chart-line"></i>
-              <span>Gold Killer | ICT & SMC Trader</span>
-            </div>
-            <div class="premium-tag">
-              <i class="fas fa-bullseye"></i> Ultra Accuracy
-            </div>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="feature-list-item">
-            <div class="feature-icon-text">
-              <i class="fas fa-book-open"></i>
-              <span>First Learn, then Earn</span>
-            </div>
-            <div class="premium-tag">
-              <i class="fas fa-chart-simple"></i> Smart Trading
-            </div>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="feature-list-item">
-            <div class="feature-icon-text">
-              <i class="fas fa-bolt"></i>
-              <span>High Accuracy Signals</span>
-            </div>
-            <div class="premium-tag">
-              <i class="fas fa-shield-haltered"></i> Risk Managed
-            </div>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="feature-list-item">
-            <div class="feature-icon-text">
-              <i class="fas fa-handshake"></i>
-              <span>Trusted Brokers</span>
-            </div>
-            <div class="premium-tag">
-              <i class="fas fa-building-columns"></i> XM & Exness
-            </div>
-          </div>
-
-          <div class="elegant-tagline">
-            <i class="fas fa-fire-flame-curved"></i> Level up your trading
-            journey now!
-          </div>
-
-          <!-- BROKER BUTTONS (ALL ORIGINAL LINKS) -->
-          <div class="broker-flex-group">
-            <a
-              href="https://one.exnesstrack.org/a/76cl5o2qff"
-              target="_blank"
-              class="btn-gold-soft"
-            >
-              <i class="fas fa-arrow-right-to-bracket"></i> Exness
-            </a>
-            <a
-              href="https://vigco.co/la-com/GUJJUFX"
-              target="_blank"
-              class="btn-gold-soft"
-            >
-              <i class="fas fa-arrow-right-to-bracket"></i> Vantage
-            </a>
-            <a
-              href="https://clicks.pipaffiliates.com/c?c=1064870&l=en&p=1"
-              target="_blank"
-              class="btn-gold-soft"
-            >
-              <i class="fas fa-arrow-right-to-bracket"></i> XM
-            </a>
-          </div>
+    <section id="gf-premium-includes">
+      <div class="gf-premium-container">
+        <div class="gf-premium-heading">
+          <span class="premium-badge">✦ PREMIUM FEATURES ✦</span>
+          <h2>What's included in <span>Gujju Forex</span>?</h2>
+          <p>
+            Everything you need to trade confidently with professional guidance,
+            structured systems, and premium market insights.
+          </p>
         </div>
 
-        <!-- RIGHT CARD: Premium Bonus + Telegram Access -->
-        <div class="vip-card-right">
-          <h3>
-            <i class="fas fa-gem"></i>
-            Premium Access
-            <i class="fas fa-star-of-life"></i>
-          </h3>
-          <div class="big-bonus">100% BONUS</div>
-          <p>
-            <i class="fas fa-circle-dollar-to-slot"></i> Deposit
-            <strong>$100–200</strong> & get instant premium access.<br />
-            <i class="fas fa-chart-line"></i> Bonus usable even during
-            drawdown.<br />
-            <i class="fas fa-brain"></i> Trade with confidence & proper setups.
-          </p>
+        <div class="gf-premium-grid">
+          <!-- card 1 - Precision Trading -->
+          <div class="gf-premium-card">
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2L12 7" stroke="#b4943b" />
+                <path d="M12 17L12 22" stroke="#b4943b" />
+                <path d="M2 12L7 12" stroke="#b4943b" />
+                <path d="M17 12L22 12" stroke="#b4943b" />
+                <circle cx="12" cy="12" r="4" stroke="#b4943b" />
+                <path d="M4.93 4.93L8.4 8.4" stroke="#b4943b" />
+                <path d="M15.6 15.6L19.07 19.07" stroke="#b4943b" />
+                <path d="M19.07 4.93L15.6 8.4" stroke="#b4943b" />
+                <path d="M8.4 15.6L4.93 19.07" stroke="#b4943b" />
+              </svg>
+            </div>
+            <h3>Precision Trading</h3>
+            <p>
+              Stop chasing small pips. Capture 600–1000+ pip moves with
+              institutional-grade smart money concepts.
+            </p>
+            <div class="card-stats">
+              <span>600-1000+ pips</span>
+              <span>Smart Money</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
+          </div>
 
-          <!-- TELEGRAM LINK (PRESERVED) -->
-          <a
-            href="https://t.me/TeamGujjuInternational"
-            target="_blank"
-            class="cta-telegram-lux"
-          >
-            <i class="fab fa-telegram"></i> Become Premium Now
-            <i class="fas fa-arrow-right"></i>
-          </a>
+          <!-- card 2 - High Accuracy Signals (FEATURED) -->
+          <div class="gf-premium-card featured">
+            <!-- <div class="card-badge">⭐ MOST POPULAR</div> -->
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"
+                  stroke="#b4943b"
+                />
+                <path d="M12 8v4l3 3" stroke="#b4943b" />
+                <path
+                  d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+                  stroke="#b4943b"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="2"
+                  fill="#b4943b"
+                  fill-opacity="0.2"
+                  stroke="#b4943b"
+                />
+              </svg>
+            </div>
+            <h3>High Accuracy Signals</h3>
+            <p>
+              Professionally curated signals with precise entries, stop-loss,
+              targets, and disciplined risk-management rules.
+            </p>
+            <div class="card-stats">
+              <span>92% accuracy rate</span>
+              <span>1500+ active traders</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
+          </div>
 
-          <div class="partner-footer">
-            <i class="fas fa-qrcode"></i> Partner Code: <strong>Q224C</strong
-            ><br />
-            <i class="fab fa-telegram-plane"></i> DM:
-            <strong>@TeamGujjuInternational</strong>
+          <!-- card 3 - Complete Trading Course -->
+          <div class="gf-premium-card">
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                  stroke="#b4943b"
+                />
+                <path
+                  d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                  stroke="#b4943b"
+                />
+                <path d="M9 7h2" stroke="#b4943b" stroke-linecap="round" />
+                <path d="M13 7h2" stroke="#b4943b" stroke-linecap="round" />
+                <path d="M8 11h8" stroke="#b4943b" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Complete Trading Course</h3>
+            <p>
+              Learn forex, gold, indices, and stocks from basics to advanced
+              strategies with live sessions and mentorship.
+            </p>
+            <div class="card-stats">
+              <span>12+ modules</span>
+              <span>Live sessions</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
+          </div>
+
+          <!-- card 4 - Risk Management System -->
+          <div class="gf-premium-card">
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="#b4943b" />
+                <path d="M12 22L12 12" stroke="#b4943b" />
+                <path
+                  d="M3 7L3 13C3 17 7 20 12 22C17 20 21 17 21 13L21 7"
+                  stroke="#b4943b"
+                />
+                <path
+                  d="M8 11L11 14L16 8"
+                  stroke="#b4943b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Risk Management System</h3>
+            <p>
+              Capital-protection-first risk management to reduce drawdowns and
+              achieve consistent long-term profitability.
+            </p>
+            <div class="card-stats">
+              <span>Max 2% risk</span>
+              <span>1:3 RR ratio</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
+          </div>
+
+          <!-- card 5 - 1:1 VIP Support -->
+          <div class="gf-premium-card">
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  stroke="#b4943b"
+                />
+                <path
+                  d="M8 10h.01"
+                  stroke="#b4943b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 10h.01"
+                  stroke="#b4943b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M16 10h.01"
+                  stroke="#b4943b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3>1:1 VIP Support</h3>
+            <p>
+              Dedicated one-on-one VIP assistance with fast responses,
+              personalized guidance, and priority support.
+            </p>
+            <div class="card-stats">
+              <span>24/7 Priority</span>
+              <span>Direct chat</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
+          </div>
+
+          <!-- card 6 - Weekly Market Outlook -->
+          <div class="gf-premium-card">
+            <div class="gf-card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+                <path
+                  d="M3 3v18h18"
+                  stroke="#b4943b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M18 17V9" stroke="#b4943b" stroke-linecap="round" />
+                <path d="M12 17V5" stroke="#b4943b" stroke-linecap="round" />
+                <path d="M6 17v-3" stroke="#b4943b" stroke-linecap="round" />
+                <circle
+                  cx="18"
+                  cy="17"
+                  r="1.5"
+                  fill="#b4943b"
+                  fill-opacity="0.3"
+                  stroke="#b4943b"
+                />
+                <circle
+                  cx="12"
+                  cy="17"
+                  r="1.5"
+                  fill="#b4943b"
+                  fill-opacity="0.3"
+                  stroke="#b4943b"
+                />
+                <circle
+                  cx="6"
+                  cy="17"
+                  r="1.5"
+                  fill="#b4943b"
+                  fill-opacity="0.3"
+                  stroke="#b4943b"
+                />
+              </svg>
+            </div>
+            <h3>Weekly Market Outlook</h3>
+            <p>
+              Weekly professional analysis covering trends, key levels,
+              sentiment, and high-probability trade setups.
+            </p>
+            <div class="card-stats">
+              <span>5+ assets</span>
+              <span>Key levels</span>
+            </div>
+            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
+              >Know More</a
+            >
           </div>
         </div>
       </div>
     </section>
+
+    <!-- SCROLL OBSERVER with enhanced behaviour -->
+    <script>
+      (function () {
+        const premiumCards = document.querySelectorAll(".gf-premium-card");
+
+        // Use Intersection Observer with threshold 0.2
+        const premiumObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                premiumObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2, rootMargin: "0px 0px -50px 0px" },
+        );
+
+        premiumCards.forEach((card) => {
+          premiumObserver.observe(card);
+        });
+
+        // Fallback for already visible cards
+        const checkVisibility = () => {
+          premiumCards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const windowHeight =
+              window.innerHeight || document.documentElement.clientHeight;
+            if (
+              rect.top < windowHeight - 100 &&
+              !card.classList.contains("show")
+            ) {
+              card.classList.add("show");
+            }
+          });
+        };
+
+        window.addEventListener("load", checkVisibility);
+        window.addEventListener("resize", checkVisibility);
+        setTimeout(checkVisibility, 200);
+      })();
+    </script>
   </body>
 </html>
