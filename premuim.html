@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-    <title>Gujju Forex | Premium Features</title>
+    <title>Gujju Forex Wala | Precision Trading & Live Markets</title>
+    <!-- Google Fonts: modern sans-serif -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
       * {
@@ -19,771 +25,637 @@
       }
 
       body {
-        background: #f8fafc;
+        background: #eef2f7;
+        font-family: "Inter", sans-serif;
+        width: 100%;
+        overflow-x: hidden;
       }
 
-      /* ==============================
-         GUJJU FOREX – PREMIUM SECTION
-         ENHANCED VERSION WITH ALL IMPROVEMENTS
-    ================================ */
-      #gf-premium-includes {
-        padding: 80px 24px;
-        background: linear-gradient(135deg, #ffffff 0%, #faf8f0 100%);
-        font-family:
-          "Inter",
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          sans-serif;
-        position: relative;
-        overflow: hidden;
-      }
-
-      /* Decorative background elements */
-      #gf-premium-includes::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 80%;
-        height: 80%;
-        background: radial-gradient(
-          circle,
-          rgba(212, 175, 55, 0.03) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      #gf-premium-includes::after {
-        content: "";
-        position: absolute;
-        bottom: -30%;
-        left: -10%;
-        width: 60%;
-        height: 60%;
-        background: radial-gradient(
-          circle,
-          rgba(212, 175, 55, 0.02) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      /* CONTAINER */
-      .gf-premium-container {
-        max-width: 1280px;
+      /* two-column premium layout - no overflow, clean flex */
+      .premium-layout {
+        display: flex;
+        width: 100%;
+        max-width: 1600px;
         margin: 0 auto;
+        min-height: 100vh;
+        background: #ffffff;
+        flex-wrap: wrap;
+      }
+
+      /* ========= LEFT SIDE: CHART (clean, inner dark widget, proper responsiveness) ========= */
+      .chart-side {
+        flex: 1.1;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem 2rem 2rem;
+      }
+
+      .market-box {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.08);
+        padding: 0.75rem;
+        transition: all 0.2s;
+        border: 1px solid #f0e6d2;
+      }
+
+      .tradingview-widget-container {
+        width: 100%;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        background: #0b1120;
         position: relative;
-        z-index: 1;
       }
 
-      /* HEADING */
-      .gf-premium-heading {
-        text-align: center;
-        margin-bottom: 64px;
+      .tradingview-widget-container iframe {
+        display: block;
+        width: 100% !important;
+        border-radius: 1rem;
+        transition: height 0.1s ease;
       }
 
-      .premium-badge {
-        display: inline-block;
-        font-size: 0.75rem;
-        letter-spacing: 2px;
-        font-weight: 700;
+      /* ========= RIGHT SIDE: main content - clean, minimal, about us as badge + simple text ========= */
+      .content-side {
+        flex: 1.3;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 2.5rem 2rem 1rem;
+        margin: 1.5rem 2rem 1.5rem 0.5rem;
+      }
+
+      .gold-accent {
         color: #d4af37;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-        background: linear-gradient(
-          135deg,
-          rgba(212, 175, 55, 0.12),
-          rgba(212, 175, 55, 0.06)
-        );
-        padding: 6px 16px;
-        border-radius: 50px;
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(212, 175, 55, 0.2);
       }
 
-      .gf-premium-heading h2 {
-        font-size: 42px;
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #d4af37, #e9c468, #c49b2f);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+      }
+
+      /* About Us badge - clean, simple, replaces old years-badge styling */
+      .about-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        background: #fefaf2;
+        padding: 0.45rem 1.4rem;
+        border-radius: 100px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #9e7b2b;
+        margin-bottom: 1.5rem;
+        width: fit-content;
+        border: 1px solid #ecdcaa;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-title {
+        font-size: 3rem;
         font-weight: 800;
         letter-spacing: -0.02em;
-        margin-bottom: 18px;
-        color: #0a0c10;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: #1f2a3e;
       }
 
-      .gf-premium-heading h2 span {
-        background: linear-gradient(135deg, #c9a53b 0%, #e4bf5e 100%);
-        background-clip: text;
+      .brand-title span {
+        background: linear-gradient(135deg, #d4af37, #e9c15b);
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
-        position: relative;
-        display: inline-block;
       }
 
-      .gf-premium-heading h2 span::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      .lead-description {
+        font-size: 1.05rem;
+        line-height: 1.45;
+        color: #1f2f3c;
+        font-weight: 500;
+        /* margin-bottom: 1rem; */
       }
 
-      .gf-premium-heading p {
-        font-size: 18px;
-        line-height: 1.5;
-        color: #4b5563;
-        max-width: 680px;
-        margin: 0 auto;
-        font-weight: 400;
+      .description-text {
+        color: #2c3e50;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 1rem;
       }
 
-      /* GRID */
-      .gf-premium-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
+      /* Simple about section: just text + highlighted points (no card, no extra box) */
+      .about-simple {
+        margin: 0.75rem 0 1.25rem 0;
       }
 
-      /* ======================
-         PREMIUM CARD (ENHANCED)
-    ======================= */
-      .gf-premium-card {
-        position: relative;
-        background: #ffffff !important;
-        border-radius: 28px;
-        padding: 32px 28px 34px 28px;
-        border: 1px solid rgba(212, 175, 55, 0.15);
-        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
-        transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
-        overflow: hidden;
+      .about-simple p {
+        color: #2c3e50;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 0.85rem;
+      }
+
+      .highlight-list {
+        list-style: none;
+        margin: 0.8rem 0 0.5rem 0;
+        padding: 0;
+      }
+
+      .highlight-list li {
+        margin-bottom: 0.6rem;
+        font-size: 0.92rem;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        line-height: 1.45;
+      }
+
+      .highlight-list li i {
+        color: #d4af37;
+        font-size: 0.85rem;
+        width: 1.3rem;
+        text-align: center;
+      }
+
+      .highlight-list li strong {
+        color: #1f2a3e;
+        font-weight: 700;
+      }
+      .highlight-list li p {
+        margin: 0;
+      }
+
+      .telegram-clean {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        background: #fefaf2;
+        border-radius: 1.2rem;
+        padding: 0.8rem 1.2rem 0.8rem 1.5rem;
+        border: 1px solid #e5ce8a;
+        margin-top: 0.4rem;
+      }
+
+      .telegram-left {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .telegram-left i {
+        font-size: 2rem;
+        color: #27a6e5;
+      }
+
+      .telegram-left div strong {
+        font-size: 0.95rem;
+        color: #1e2a36;
+      }
+
+      .telegram-left div small {
+        font-size: 0.68rem;
+        color: #6c7a8e;
+      }
+
+      .btn-gold {
+        background: linear-gradient(135deg, #d4af37, #e9c15b);
+        border: none;
+        padding: 0.6rem 1.8rem;
+        border-radius: 2.5rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: #1f2a2e;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        transition: 0.2s;
         cursor: pointer;
-
-        /* LEFT → RIGHT ANIMATION */
-        opacity: 0;
-        transform: translateX(-80px);
-        transition: all 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       }
 
-      /* Ripple effect on click */
-      .gf-premium-card:active::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: rgba(212, 175, 55, 0.3);
-        transform: translate(-50%, -50%);
-        animation: ripple 0.6s ease-out;
-        pointer-events: none;
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 20px rgba(212, 175, 55, 0.3);
+        background: #000000d2;
+        color: #e0ba48;
       }
 
-      @keyframes ripple {
-        0% {
-          width: 0;
-          height: 0;
-          opacity: 0.5;
-        }
-        100% {
-          width: 400px;
-          height: 400px;
-          opacity: 0;
-        }
+      hr {
+        margin: 1rem 0 0.6rem;
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, #ece2ca, #d4af37, #ece2ca);
       }
 
-      /* SHOW STATE */
-      .gf-premium-card.show {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      /* STAGGER DELAY */
-      .gf-premium-card:nth-child(1) {
-        transition-delay: 0.05s;
-      }
-      .gf-premium-card:nth-child(2) {
-        transition-delay: 0.12s;
-      }
-      .gf-premium-card:nth-child(3) {
-        transition-delay: 0.19s;
-      }
-      .gf-premium-card:nth-child(4) {
-        transition-delay: 0.26s;
-      }
-      .gf-premium-card:nth-child(5) {
-        transition-delay: 0.33s;
-      }
-      .gf-premium-card:nth-child(6) {
-        transition-delay: 0.4s;
-      }
-
-      /* Gold top line (enhanced) */
-      .gf-premium-card::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 15%;
-        width: 70%;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          #d4af37,
-          #e8c95a,
-          #d4af37,
-          transparent
-        );
-        opacity: 0;
-        border-radius: 3px;
-        transition: opacity 0.4s ease;
-      }
-
-      /* Featured card badge */
-      .gf-premium-card.featured {
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        box-shadow: 0 25px 40px -12px rgba(212, 175, 55, 0.15);
-      }
-
-      .card-badge {
-        position: absolute;
-        top: -12px;
-        right: 20px;
-        background: linear-gradient(135deg, #d4af37, #e8c95a);
-        color: #1a1a1a;
-        font-size: 0.7rem;
-        font-weight: 800;
-        padding: 5px 14px;
-        border-radius: 50px;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-        letter-spacing: 0.5px;
-        z-index: 2;
-      }
-
-      /* Icon wrapper (enhanced) */
-      .gf-card-icon {
-        width: 56px;
-        height: 56px;
-        background: linear-gradient(
-          135deg,
-          rgba(212, 175, 55, 0.12),
-          rgba(212, 175, 55, 0.06)
-        );
-        border-radius: 20px;
+      .footer-note {
+        font-size: 0.65rem;
+        text-align: center;
+        margin-top: 0.8rem;
+        color: #8b9ab0;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 24px;
-        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-        border: 1px solid rgba(212, 175, 55, 0.1);
+        gap: 8px;
       }
 
-      .gf-card-icon svg {
-        width: 28px;
-        height: 28px;
-        stroke-width: 1.7;
-        stroke: #b4943b;
-        fill: none;
-        transition: all 0.3s ease;
-      }
-
-      .gf-card-icon .fill-gold {
-        stroke: #b4943b;
-        fill: #b4943b;
-        fill-opacity: 0.15;
-      }
-
-      /* CARD TITLE */
-      .gf-premium-card h3 {
-        font-size: 1.45rem;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        color: #111827;
-        margin-bottom: 12px;
-        line-height: 1.3;
-      }
-
-      /* CARD TEXT */
-      .gf-premium-card p {
-        font-size: 0.95rem;
-        line-height: 1.55;
-        color: #4b5563;
-        font-weight: 400;
-      }
-
-      /* Card stats */
-      .card-stats {
-        margin-top: 16px;
-        display: flex;
-        gap: 16px;
-        font-size: 0.8rem;
-        color: #6b7280;
-        padding-top: 12px;
-        border-top: 1px solid rgba(212, 175, 55, 0.1);
-      }
-
-      .card-stats span {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .card-stats span::before {
-        content: "✓";
-        color: #d4af37;
-        font-weight: 700;
-      }
-
-      /* Card link */
-      .card-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 18px;
-        color: #d4af37;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        letter-spacing: 0.3px;
-      }
-
-      .card-link::after {
-        content: "→";
-        transition: transform 0.2s ease;
-      }
-
-      .card-link:hover::after {
-        transform: translateX(4px);
-      }
-
-      /* HOVER EFFECT – modern lift */
-      .gf-premium-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.15);
-        border-color: rgba(212, 175, 55, 0.4);
-      }
-
-      .gf-premium-card:hover::after {
-        opacity: 0.8;
-      }
-
-      .gf-premium-card:hover .gf-card-icon {
-        background: linear-gradient(135deg, #d4af37, #e8c95a);
-        transform: scale(1.02);
-        border-color: transparent;
-      }
-
-      .gf-premium-card:hover .gf-card-icon svg {
-        stroke: #ffffff;
-        stroke-width: 1.8;
-      }
-
-      .gf-premium-card:hover .card-link {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Focus states for accessibility */
-      .gf-premium-card:focus-visible {
-        outline: 2px solid #d4af37;
-        outline-offset: 4px;
-        transform: translateY(-4px);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 1024px) {
-        #gf-premium-includes {
-          padding: 60px 24px;
+      /* ========= RESPONSIVE: first content then chart on mobile, fix overflow ========= */
+      @media (max-width: 1000px) {
+        .premium-layout {
+          flex-direction: column;
         }
-        .gf-premium-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
+        .chart-side {
+          order: 2;
+          flex: auto;
+          padding: 1.5rem;
+          width: 100%;
         }
-        .gf-premium-heading h2 {
-          font-size: 34px;
+        .content-side {
+          order: 1;
+          flex: auto;
+          margin: 1.5rem 1.8rem;
+          padding: 0.2rem 0 0.5rem 0;
+          width: auto;
         }
-        .gf-premium-heading p {
-          font-size: 16px;
+        .brand-title {
+          font-size: 2.3rem;
+        }
+        .market-box {
+          padding: 0.5rem;
+        }
+        .tradingview-widget-container iframe {
+          min-height: 380px !important;
+        }
+        .tradingview-widget-container {
+          height: 400px !important;
         }
       }
 
-      @media (max-width: 768px) {
-        .gf-premium-card {
-          padding: 26px 24px;
+      @media (max-width: 680px) {
+        .content-side {
+          margin: 1rem 1.2rem;
         }
-        .gf-card-icon {
-          width: 50px;
-          height: 50px;
+        .telegram-clean {
+          flex-direction: column;
+          align-items: flex-start;
         }
-      }
-
-      @media (max-width: 640px) {
-        #gf-premium-includes {
-          padding: 50px 20px;
+        .btn-gold {
+          width: 100%;
+          justify-content: center;
         }
-        .gf-premium-heading h2 {
-          font-size: 28px;
+        .brand-title {
+          font-size: 1.9rem;
         }
-        .premium-badge {
-          font-size: 0.7rem;
-          padding: 4px 12px;
+        .tradingview-widget-container iframe {
+          min-height: 400px !important;
         }
-        .gf-premium-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
+        .chart-side {
+          padding: 1rem;
         }
-        .gf-premium-card {
-          padding: 24px 22px;
-        }
-        .gf-card-icon {
-          width: 48px;
-          height: 48px;
-          margin-bottom: 18px;
-        }
-        .gf-card-icon svg {
-          width: 24px;
-          height: 24px;
-        }
-        .gf-premium-card h3 {
-          font-size: 1.3rem;
-        }
-        .card-stats {
-          /* flex-direction: column; */
-          gap: 8px;
+        .about-badge {
+          font-size: 0.68rem;
+          padding: 0.4rem 1.2rem;
         }
       }
 
-      @media (min-width: 1400px) {
-        .gf-premium-grid {
-          gap: 36px;
+      @media (max-width: 480px) {
+        .content-side {
+          margin: 0.8rem 1rem;
+          padding: 30px 20px;
         }
-        .gf-premium-card {
-          padding: 34px 30px;
+        .brand-title {
+          font-size: 1.7rem;
         }
+        .tradingview-widget-container iframe {
+          min-height: 320px !important;
+        }
+        .highlight-list li {
+          font-size: 0.85rem;
+          gap: 0.5rem;
+        }
+        .highlight-list li i {
+          font-size: 0.75rem;
+          width: 1.1rem;
+        }
+      }
+
+      /* smooth scrollbar */
+      .content-side::-webkit-scrollbar {
+        width: 4px;
+      }
+      .content-side::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      .content-side::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
       }
     </style>
   </head>
   <body>
-    <section id="gf-premium-includes">
-      <div class="gf-premium-container">
-        <div class="gf-premium-heading">
-          <span class="premium-badge">✦ PREMIUM FEATURES ✦</span>
-          <h2>What's included in <span>Gujju Forex</span>?</h2>
-          <p>
-            Everything you need to trade confidently with professional guidance,
-            structured systems, and premium market insights.
-          </p>
-        </div>
-
-        <div class="gf-premium-grid">
-          <!-- card 1 - Precision Trading -->
-          <div class="gf-premium-card">
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 2L12 7" stroke="#b4943b" />
-                <path d="M12 17L12 22" stroke="#b4943b" />
-                <path d="M2 12L7 12" stroke="#b4943b" />
-                <path d="M17 12L22 12" stroke="#b4943b" />
-                <circle cx="12" cy="12" r="4" stroke="#b4943b" />
-                <path d="M4.93 4.93L8.4 8.4" stroke="#b4943b" />
-                <path d="M15.6 15.6L19.07 19.07" stroke="#b4943b" />
-                <path d="M19.07 4.93L15.6 8.4" stroke="#b4943b" />
-                <path d="M8.4 15.6L4.93 19.07" stroke="#b4943b" />
-              </svg>
-            </div>
-            <h3>Precision Trading</h3>
-            <p>
-              Stop chasing small pips. Capture 600–1000+ pip moves with
-              institutional-grade smart money concepts.
-            </p>
-            <div class="card-stats">
-              <span>600-1000+ pips</span>
-              <span>Smart Money</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
+    <div class="premium-layout" id="About">
+      <!-- LEFT SIDE: clean TradingView widget with proper symbols & dynamic height fix -->
+      <div class="chart-side">
+        <div class="market-box">
+          <div class="tradingview-widget-container">
+            <!-- TradingView Widget will be embedded here -->
+            <div class="tradingview-widget-container__widget"></div>
+            <!-- Load script with symbol overview widget - using correct parameters to avoid rendering issues -->
+            <script
+              type="text/javascript"
+              src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+              async
             >
-          </div>
-
-          <!-- card 2 - High Accuracy Signals (FEATURED) -->
-          <div class="gf-premium-card featured">
-            <!-- <div class="card-badge">⭐ MOST POPULAR</div> -->
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.7"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"
-                  stroke="#b4943b"
-                />
-                <path d="M12 8v4l3 3" stroke="#b4943b" />
-                <path
-                  d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
-                  stroke="#b4943b"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="2"
-                  fill="#b4943b"
-                  fill-opacity="0.2"
-                  stroke="#b4943b"
-                />
-              </svg>
-            </div>
-            <h3>High Accuracy Signals</h3>
-            <p>
-              Professionally curated signals with precise entries, stop-loss,
-              targets, and disciplined risk-management rules.
-            </p>
-            <div class="card-stats">
-              <span>92% accuracy rate</span>
-              <span>1500+ active traders</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
-            >
-          </div>
-
-          <!-- card 3 - Complete Trading Course -->
-          <div class="gf-premium-card">
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              >
-                <path
-                  d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
-                  stroke="#b4943b"
-                />
-                <path
-                  d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
-                  stroke="#b4943b"
-                />
-                <path d="M9 7h2" stroke="#b4943b" stroke-linecap="round" />
-                <path d="M13 7h2" stroke="#b4943b" stroke-linecap="round" />
-                <path d="M8 11h8" stroke="#b4943b" stroke-linecap="round" />
-              </svg>
-            </div>
-            <h3>Complete Trading Course</h3>
-            <p>
-              Learn forex, gold, indices, and stocks from basics to advanced
-              strategies with live sessions and mentorship.
-            </p>
-            <div class="card-stats">
-              <span>12+ modules</span>
-              <span>Live sessions</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
-            >
-          </div>
-
-          <!-- card 4 - Risk Management System -->
-          <div class="gf-premium-card">
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              >
-                <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="#b4943b" />
-                <path d="M12 22L12 12" stroke="#b4943b" />
-                <path
-                  d="M3 7L3 13C3 17 7 20 12 22C17 20 21 17 21 13L21 7"
-                  stroke="#b4943b"
-                />
-                <path
-                  d="M8 11L11 14L16 8"
-                  stroke="#b4943b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <h3>Risk Management System</h3>
-            <p>
-              Capital-protection-first risk management to reduce drawdowns and
-              achieve consistent long-term profitability.
-            </p>
-            <div class="card-stats">
-              <span>Max 2% risk</span>
-              <span>1:3 RR ratio</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
-            >
-          </div>
-
-          <!-- card 5 - 1:1 VIP Support -->
-          <div class="gf-premium-card">
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              >
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                  stroke="#b4943b"
-                />
-                <path
-                  d="M8 10h.01"
-                  stroke="#b4943b"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M12 10h.01"
-                  stroke="#b4943b"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M16 10h.01"
-                  stroke="#b4943b"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <h3>1:1 VIP Support</h3>
-            <p>
-              Dedicated one-on-one VIP assistance with fast responses,
-              personalized guidance, and priority support.
-            </p>
-            <div class="card-stats">
-              <span>24/7 Priority</span>
-              <span>Direct chat</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
-            >
-          </div>
-
-          <!-- card 6 - Weekly Market Outlook -->
-          <div class="gf-premium-card">
-            <div class="gf-card-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              >
-                <path
-                  d="M3 3v18h18"
-                  stroke="#b4943b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M18 17V9" stroke="#b4943b" stroke-linecap="round" />
-                <path d="M12 17V5" stroke="#b4943b" stroke-linecap="round" />
-                <path d="M6 17v-3" stroke="#b4943b" stroke-linecap="round" />
-                <circle
-                  cx="18"
-                  cy="17"
-                  r="1.5"
-                  fill="#b4943b"
-                  fill-opacity="0.3"
-                  stroke="#b4943b"
-                />
-                <circle
-                  cx="12"
-                  cy="17"
-                  r="1.5"
-                  fill="#b4943b"
-                  fill-opacity="0.3"
-                  stroke="#b4943b"
-                />
-                <circle
-                  cx="6"
-                  cy="17"
-                  r="1.5"
-                  fill="#b4943b"
-                  fill-opacity="0.3"
-                  stroke="#b4943b"
-                />
-              </svg>
-            </div>
-            <h3>Weekly Market Outlook</h3>
-            <p>
-              Weekly professional analysis covering trends, key levels,
-              sentiment, and high-probability trade setups.
-            </p>
-            <div class="card-stats">
-              <span>5+ assets</span>
-              <span>Key levels</span>
-            </div>
-            <a href="https://t.me/+f0-g1L7fg5s5OTZl" class="card-link"
-              >Know More</a
-            >
+              {
+                "lineWidth": 2,
+                "chartType": "area",
+                "backgroundColor": "#0b1120",
+                "widgetFontColor": "#DBDBDB",
+                "colorTheme": "dark",
+                "autosize": true,
+                "width": "100%",
+                "height": "500",
+                "symbols": [
+                  ["Gold", "OANDA:XAUUSD|1D"],
+                  ["Bitcoin", "BITSTAMP:BTCUSD|1D"],
+                  ["Crude Oil", "TVC:USOIL|1D"]
+                ]
+              }
+            </script>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- SCROLL OBSERVER with enhanced behaviour -->
+      <!-- RIGHT SIDE: main content area, simplified with badge "about us" + simple text and highlighted points, no instrument rows -->
+      <div class="content-side">
+        <!-- About Us Badge - clean badge style replacing years-badge -->
+        <div class="about-badge">
+          <i class="fas fa-users gold-accent"></i> About Us · Founded on
+          Discipline & Price Action
+        </div>
+
+        <h1 class="brand-title">Gujju <span>Forex Wala</span></h1>
+
+        <div class="lead-description">
+          Professional trading & market analysis — built on
+          <span class="gold-gradient-text">experience, discipline</span>
+          and deep global market understanding.
+        </div>
+
+        <!-- Simple About Section: just text + clean highlighted points (no extra card, no boxes) -->
+        <div class="about-simple">
+          <p>
+            With
+            <strong class="gold-accent">8+ years of active involvement</strong>
+            in Forex and Cryptocurrency trading, Gujju Forex Wala has grown
+            alongside evolving market conditions, Trader psychology, and
+            Real-world price behavior. Our approach is rooted in
+            <strong>price action mastery</strong> — not lagging indicators or
+            theoretical fluff.
+          </p>
+
+          <ul class="highlight-list">
+            <li>
+              <i class="fas fa-chart-line"></i>
+              <p>
+                <strong>Live market execution</strong> — every strategy tested
+                in Real Volatility
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-brain"></i>
+              <p>
+                <strong>Disciplined frameworks</strong> focused on supply/demand
+                & order flow
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-coins"></i>
+              <p>
+                <strong>Specialized in Gold (XAUUSD) & Bitcoin (BTC)</strong>
+                — highest liquidity assets
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-microchip"></i>
+              <p>
+                <strong>Hand-crafted trading systems</strong> refined over
+                thousands of hours
+              </p>
+            </li>
+          </ul>
+
+          <p>
+            We don't chase hype. Our edge comes from
+            <strong
+              >clean Price Action, Risk-Conscious Psychology, and Continuous
+              Adaptation</strong
+            >
+            to global macro trends. Whether it's the safe-haven dynamics of Gold
+            or the volatility cycles of Bitcoin, our analysis delivers precision
+            where it matters.
+          </p>
+        </div>
+
+        <!-- Telegram CTA - clean and minimal -->
+        <div class="telegram-clean">
+          <div class="telegram-left">
+            <i class="fab fa-telegram-plane"></i>
+            <div>
+              <strong>Join Telegram Channel</strong><br />
+              <small
+                >Real-time insights · Trade setups · Market psychology & live
+                analysis</small
+              >
+            </div>
+          </div>
+          <a
+            href="https://t.me/gujjuforexwala"
+            class="btn-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-telegram"></i> Join Telegram
+          </a>
+        </div>
+
+        <!-- <hr /> -->
+        <!-- <div class="footer-note">
+          <i class="fas fa-chart-line gold-accent"></i> Gujju Forex Wala — where
+          discipline meets price action. Global markets, precision trading.
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Advanced script to enforce proper widget rendering, fix height/width issues, and avoid overflow -->
     <script>
-      (function () {
-        const premiumCards = document.querySelectorAll(".gf-premium-card");
+      (function fixTradingViewAndLayout() {
+        // Ensure that the TradingView widget iframe gets proper dimensions without clipping
+        function enforceWidgetDimensions() {
+          const containers = document.querySelectorAll(
+            ".tradingview-widget-container",
+          );
+          if (!containers.length) return;
 
-        // Use Intersection Observer with threshold 0.2
-        const premiumObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                premiumObserver.unobserve(entry.target);
+          containers.forEach((container) => {
+            // Find iframe inside container (TradingView injects it after script execution)
+            const iframe = container.querySelector("iframe");
+            if (!iframe) return;
+
+            // Remove any conflicting inline styles that cause clipping
+            iframe.style.width = "100%";
+            iframe.style.display = "block";
+
+            // Set adaptive min-height based on screen size but ensure enough space
+            let minH = 440;
+            if (window.innerWidth <= 480) minH = 320;
+            else if (window.innerWidth <= 768) minH = 380;
+            else if (window.innerWidth <= 1000) minH = 420;
+            else minH = 480;
+
+            iframe.style.minHeight = minH + "px";
+            iframe.style.height = "auto";
+            // force a good height for better visibility
+            iframe.style.height = minH + "px";
+
+            // Also ensure container itself has no overflow issues
+            container.style.overflow = "hidden";
+            container.style.borderRadius = "1rem";
+
+            // Iframe border-radius harmony
+            iframe.style.borderRadius = "0.85rem";
+          });
+        }
+
+        // Initial attempt
+        function waitForWidgetAndFix() {
+          enforceWidgetDimensions();
+          // Additional watch for dynamic insertion: TradingView sometimes rebuilds
+          const observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+              if (mutation.addedNodes.length) {
+                // check if iframe got added/updated
+                const iframeExists = document.querySelector(
+                  ".tradingview-widget-container iframe",
+                );
+                if (iframeExists) {
+                  enforceWidgetDimensions();
+                }
               }
             });
-          },
-          { threshold: 0.2, rootMargin: "0px 0px -50px 0px" },
-        );
+          });
 
-        premiumCards.forEach((card) => {
-          premiumObserver.observe(card);
+          const chartSide = document.querySelector(".chart-side");
+          if (chartSide) {
+            observer.observe(chartSide, { childList: true, subtree: true });
+          }
+          // also observe document body for safe measure
+          observer.observe(document.body, {
+            childList: true,
+            subtree: false,
+          });
+        }
+
+        // Run on load, resize, and after TradingView script loads (delayed)
+        window.addEventListener("load", function () {
+          setTimeout(enforceWidgetDimensions, 100);
+          setTimeout(enforceWidgetDimensions, 500);
+          setTimeout(enforceWidgetDimensions, 1200);
         });
 
-        // Fallback for already visible cards
-        const checkVisibility = () => {
-          premiumCards.forEach((card) => {
-            const rect = card.getBoundingClientRect();
-            const windowHeight =
-              window.innerHeight || document.documentElement.clientHeight;
-            if (
-              rect.top < windowHeight - 100 &&
-              !card.classList.contains("show")
-            ) {
-              card.classList.add("show");
-            }
-          });
-        };
+        window.addEventListener("resize", function () {
+          enforceWidgetDimensions();
+        });
 
-        window.addEventListener("load", checkVisibility);
-        window.addEventListener("resize", checkVisibility);
-        setTimeout(checkVisibility, 200);
+        // Also capture if TradingView widget re-renders after interactions
+        setInterval(function () {
+          const iframes = document.querySelectorAll(
+            ".tradingview-widget-container iframe",
+          );
+          if (iframes.length) {
+            let needsFix = false;
+            iframes.forEach((iframe) => {
+              const computedHeight = iframe.clientHeight;
+              if (computedHeight < 250 && window.innerWidth > 600) {
+                needsFix = true;
+              }
+              // ensure width consistency
+              if (iframe.style.width !== "100%") {
+                iframe.style.width = "100%";
+              }
+            });
+            if (needsFix) enforceWidgetDimensions();
+          }
+        }, 1500);
+
+        waitForWidgetAndFix();
+
+        // additional fix: remove any residual inline height from TradingView default that breaks layout
+        function finalStyleOverride() {
+          const style = document.createElement("style");
+          style.textContent = `
+        .tradingview-widget-container iframe {
+          max-width: 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+        .market-box {
+          overflow: hidden;
+        }
+      `;
+          document.head.appendChild(style);
+        }
+        finalStyleOverride();
       })();
+
+      // Secondary: ensure the widget container gets proper aspect ratio and no horizontal scroll
+      (function fixParentOverflow() {
+        const marketBoxes = document.querySelectorAll(".market-box");
+        marketBoxes.forEach((box) => {
+          box.style.overflowX = "hidden";
+        });
+        const chartSideElem = document.querySelector(".chart-side");
+        if (chartSideElem) chartSideElem.style.overflowX = "hidden";
+        const premiumLayout = document.querySelector(".premium-layout");
+        if (premiumLayout) premiumLayout.style.overflowX = "hidden";
+      })();
+
+      // manual hotfix for any embedded script missing params: force re-run of style after widget fully loads
+      window.addEventListener("load", function () {
+        const allIframes = document.querySelectorAll("iframe");
+        allIframes.forEach((iframe) => {
+          if (iframe.src && iframe.src.includes("tradingview")) {
+            iframe.setAttribute("scrolling", "no");
+            iframe.style.overflow = "hidden";
+            // set explicit min height for stability
+            if (window.innerWidth <= 680) {
+              iframe.style.minHeight = "380px";
+              iframe.style.height = "380px";
+            } else {
+              iframe.style.minHeight = "460px";
+              iframe.style.height = "460px";
+            }
+          }
+        });
+        // also for very narrow screens
+        if (window.innerWidth <= 480) {
+          const widgets = document.querySelectorAll(
+            ".tradingview-widget-container iframe",
+          );
+          widgets.forEach((w) => {
+            w.style.minHeight = "300px";
+            w.style.height = "300px";
+          });
+        }
+      });
     </script>
   </body>
 </html>

@@ -1084,7 +1084,6 @@
           }
 
           .cta-primary:hover {
-            /* transform: translateY(-3px); */
             box-shadow: 0 20px 30px -10px rgba(212, 175, 55, 0.6);
             background: #000000;
             color: #fdd03c;
@@ -1352,57 +1351,60 @@
             }
           }
 
-          /* ===== RESPONSIVE IMPROVEMENTS: LESS HEIGHT / SMALLER VERTICAL SPACE (but desktop untouched) ===== */
-          /* For tablets and smaller devices we reduce padding, margins and tighten spacing */
+          /* ===== RESPONSIVE IMPROVEMENTS ===== */
+          /* No global changes, only targeted responsive overrides that maintain original desktop experience above 1051px */
+
+          /* For tablets and smaller devices we reduce padding, margins and tighten spacing.
+         But the desktop version (min-width: 1051px) remains exactly as originally designed. */
           @media (max-width: 1050px) {
             .hero {
-              padding: 50px 6% 60px; /* reduced vertical padding for less height */
+              padding: 50px 6% 60px;
               flex-direction: column;
               text-align: center;
-              gap: 40px; /* slightly reduced gap */
+              gap: 40px;
             }
             .hero-content {
               text-align: center;
               display: flex;
               flex-direction: column;
               align-items: center;
-              padding: 20px 20px 25px 20px; /* less padding for compactness */
+              padding: 20px 20px 25px 20px;
             }
             .hero h1 {
               font-size: 46px;
-              margin-bottom: 20px; /* reduced margin */
+              margin-bottom: 20px;
             }
             .hero p {
               text-align: center;
-              margin-bottom: 28px; /* less bottom margin */
+              margin-bottom: 28px;
               font-size: 1rem;
             }
             .button-group {
-              margin-bottom: 36px; /* reduced from 48px */
+              margin-bottom: 36px;
               gap: 16px;
             }
             .stats-modern {
-              padding-top: 22px; /* less padding */
+              padding-top: 22px;
               gap: 32px;
             }
             .badge {
               margin-left: auto;
               margin-right: auto;
-              margin-bottom: 18px; /* less space */
+              margin-bottom: 18px;
             }
             .hero-visual {
               width: 380px;
               height: 380px;
             }
+            /* Hide fc2 and fc3 on tablet to keep design clean, reduce clutter */
             .fc2,
             .fc3 {
-              display: none; /* keeps design clean, reduces vertical clutter on smaller heights */
+              display: none;
             }
             .fc1,
             .fc4 {
               transform: scale(0.85);
             }
-            /* move floating cards slightly inwards to fit better */
             .fc1 {
               left: -23%;
               top: 82%;
@@ -1417,7 +1419,7 @@
           @media (max-width: 768px) {
             .hero {
               padding: 40px 5% 50px;
-              min-height: auto; /* allows content to dictate height, prevents excessive min-height */
+              min-height: auto;
             }
             .hero-content {
               padding: 12px 16px 20px 16px;
@@ -1440,14 +1442,14 @@
               font-size: 0.9rem;
             }
             .stats-modern {
-              gap: 24px;
+              gap: 20px;
               padding-top: 18px;
             }
             .stat-number {
-              font-size: 22px;
+              font-size: 18px;
             }
             .stat-label {
-              font-size: 10px;
+              font-size: 7px;
               letter-spacing: 1px;
             }
             .hero-visual {
@@ -1491,13 +1493,14 @@
             }
           }
 
-          /* For very short screen heights (e.g., landscape or compact phones) — reduce spacing further */
+          /* For very short screen heights (landscape or compact phones) — reduce spacing further */
           @media (max-height: 700px) and (max-width: 900px) {
             .hero {
               padding: 25px 5% 35px;
+              padding-top: 100px;
             }
             .hero-content {
-              padding: 8px 12px 15px 12px;
+              padding: 8px 5px 15px 6px;
             }
             .badge {
               margin-bottom: 12px;
@@ -1527,10 +1530,10 @@
               gap: 20px;
             }
             .stat-number {
-              font-size: 20px;
+              font-size: 15px;
             }
             .stat-label {
-              font-size: 9px;
+              font-size: 6.8px;
             }
             .hero-visual {
               width: 250px;
@@ -1561,15 +1564,19 @@
             }
           }
 
-          /* Preserve original desktop look above 1051px: no changes to padding, margins, or layout */
+          /* DESKTOP ORIGINAL PRESERVATION: 
+         For screens 1051px and above, absolutely no changes to desktop layout.
+         All values are exactly as initially defined in original styles. */
           @media (min-width: 1051px) {
             .hero {
               min-height: 107vh;
               padding: 145px 8%;
-               }
             }
             .hero-content {
               padding: 27px 0px 30px 25px;
+              max-width: 620px;
+              background: #00000030;
+              border-radius: 20px;
             }
             .hero h1 {
               font-size: 54px;
@@ -1578,9 +1585,11 @@
             .hero p {
               margin-bottom: 32px;
               font-size: 1.05rem;
+              max-width: 540px;
             }
             .button-group {
               margin-bottom: 48px;
+              gap: 18px;
             }
             .stats-modern {
               padding-top: 28px;
@@ -1592,32 +1601,60 @@
             }
             .float-card {
               transform: scale(1);
-            }
-            .fc1,
-            .fc2,
-            .fc3,
-            .fc4 {
               display: flex;
             }
+            /* Restore all floating cards positions exactly as original desktop */
             .fc1 {
               left: -25%;
               top: 5%;
+              display: flex;
             }
             .fc2 {
               bottom: 12%;
               left: -8%;
+              display: flex;
             }
             .fc3 {
               top: 30%;
               right: -8%;
+              display: flex;
             }
             .fc4 {
               bottom: 20%;
               right: 5%;
+              display: flex;
+            }
+            /* Ensure no hidden elements for desktop */
+            .fc2,
+            .fc3 {
+              display: flex;
+            }
+            .badge {
+              margin-left: 0;
+              margin-right: 0;
+              margin-bottom: 24px;
+            }
+            .hero-content {
+              text-align: left;
+              align-items: flex-start;
+            }
+            .hero p {
+              text-align: left;
+            }
+            .stats-modern {
+              justify-content: flex-start;
+            }
+            .button-group {
+              justify-content: flex-start;
             }
           }
 
-          /* Misc styling */
+          /* Additional small safety: ensure desktop hover and animations remain untouched */
+          @media (min-width: 1051px) and (max-width: 1200px) {
+            /* keep all desktop values stable, no extra overrides that could break */
+          }
+
+          /* Misc styling - no global changes */
           [data-lucide] {
             display: inline-block;
             width: 1.2em;
@@ -1680,10 +1717,10 @@
                 target="_blank"
                 rel="noopener"
               >
-                <i class="fab fa-telegram-plane"></i>
+                <i data-lucide="send"></i>
                 Join Telegram for Free
               </a>
-              <!-- Secondary button optional but commented (kept for potential future) -->
+              <!-- Secondary button removed to match original optional but we keep consistent -->
             </div>
 
             <div class="stats-modern">
@@ -1744,16 +1781,23 @@
                 <strong>~ 12 min</strong>
               </div>
             </div>
-
-            <!-- <div class="pulse-dot"></div> -->
           </div>
         </section>
 
         <script>
           // Initialize Lucide icons
-          lucide.createIcons();
+          if (typeof lucide !== "undefined" && lucide.createIcons) {
+            lucide.createIcons();
+          }
 
-          // Optional secondary button if exists (currently no secondary but we keep safe)
+          // Re-run on resize to ensure icons are rendered correctly in dynamic contexts (rare edge case)
+          window.addEventListener("resize", function () {
+            if (typeof lucide !== "undefined" && lucide.createIcons) {
+              lucide.createIcons();
+            }
+          });
+
+          // Optional smooth interaction for secondary button if present (not in current markup but keeping safe)
           const secondaryBtn = document.querySelector(".cta-secondary");
           if (secondaryBtn) {
             secondaryBtn.addEventListener("click", (e) => {
@@ -1763,20 +1807,10 @@
               );
             });
           }
-
-          // Re-run lucide icons after any possible dynamic changes (not needed but safe)
-          window.addEventListener("resize", () => {
-            lucide.createIcons();
-          });
-
-          // Optional smooth hover effect enhancement
-          const visualCircle = document.querySelector(".hero-visual");
-          if (visualCircle) {
-            visualCircle.addEventListener("mouseenter", () => {});
-          }
         </script>
       </body>
     </html>
+
     <!-- ============Home==============  -->
     <!-- ===========Ticker============ -->
     <!-- LIVE GOLD PRICE TICKER -->
@@ -2114,6 +2148,9 @@
             .tradingview-widget-container iframe {
               min-height: 380px !important;
             }
+            .tradingview-widget-container {
+              height: 400px !important;
+            }
           }
 
           @media (max-width: 680px) {
@@ -2146,6 +2183,7 @@
           @media (max-width: 480px) {
             .content-side {
               margin: 0.8rem 1rem;
+              padding: 30px 20px;
             }
             .brand-title {
               font-size: 1.7rem;
