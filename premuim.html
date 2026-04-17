@@ -4,658 +4,452 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover"
     />
-    <title>Gujju Forex Wala | Precision Trading & Live Markets</title>
-    <!-- Google Fonts: modern sans-serif -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <title>Gold Ticker | Full Width | Zero Border Radius | Dark Theme</title>
     <style>
+      /* -------------------------------
+       GLOBAL RESET — NO EXTERNAL MARGINS/PADDING
+    ------------------------------- */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
+      /* Dark background base — can be overridden externally, but keeps ticker context dark */
       body {
-        background: #eef2f7;
-        font-family: "Inter", sans-serif;
-        width: 100%;
+        background-color: #0a0e17; /* rich dark slate — matches widget dark theme */
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          sans-serif;
+        line-height: 1.4;
         overflow-x: hidden;
       }
 
-      /* two-column premium layout - no overflow, clean flex */
-      .premium-layout {
-        display: flex;
-        width: 100%;
-        max-width: 1600px;
-        margin: 0 auto;
-        min-height: 100vh;
-        background: #ffffff;
-        flex-wrap: wrap;
-      }
-
-      /* ========= LEFT SIDE: CHART (clean, inner dark widget, proper responsiveness) ========= */
-      .chart-side {
-        flex: 1.1;
-        background: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem 1rem 2rem 2rem;
-      }
-
-      .market-box {
-        background: #ffffff;
-        border-radius: 1.5rem;
-        box-shadow: 0 18px 35px -12px rgba(0, 0, 0, 0.08);
-        padding: 0.75rem;
-        transition: all 0.2s;
-        border: 1px solid #f0e6d2;
-      }
-
-      .tradingview-widget-container {
-        width: 100%;
-        border-radius: 1.25rem;
-        overflow: hidden;
-        background: #0b1120;
-        position: relative;
-      }
-
-      .tradingview-widget-container iframe {
+      /* The only wrapper: complete control, zero margin/padding, full viewport stretch */
+      .gold-ticker-wrapper {
         display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent; /* allows parent background to flow, but container is solid via widget? widget uses isTransparent: true so background shows */
+        border: none;
+        border-radius: 0px !important;
+        outline: none;
+        box-shadow: none;
+        overflow-x: auto; /* only for extreme narrow cases but ticker tape handles responsiveness */
+        overflow-y: hidden;
+      }
+
+      /* Force TradingView container to be 100% width, no rounding, no spacing */
+      .gold-ticker-wrapper .tradingview-widget-container {
         width: 100% !important;
-        border-radius: 1rem;
-        transition: height 0.1s ease;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0;
+        font-size: 0;
+        border-radius: 0px !important;
+        background: transparent;
+        border: none !important;
       }
 
-      /* ========= RIGHT SIDE: main content - clean, minimal, about us as badge + simple text ========= */
-      .content-side {
-        flex: 1.3;
-        background: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem 2.5rem 2rem 1rem;
-        margin: 1.5rem 2rem 1.5rem 0.5rem;
+      /* Direct widget area — no extra padding or rounding */
+      .gold-ticker-wrapper .tradingview-widget-container__widget {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0px !important;
+        border: none !important;
       }
 
-      .gold-accent {
-        color: #d4af37;
+      /* Aggressive override for ANY element inside ticker (including iframes, canvas, divs, shadows) */
+      .gold-ticker-wrapper *,
+      .gold-ticker-wrapper *::before,
+      .gold-ticker-wrapper *::after {
+        border-radius: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
       }
 
-      .gold-gradient-text {
-        background: linear-gradient(135deg, #d4af37, #e9c468, #c49b2f);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-weight: 800;
+      /* Specific iframe / widget element safety */
+      .gold-ticker-wrapper iframe,
+      .gold-ticker-wrapper embed,
+      .gold-ticker-wrapper object,
+      .gold-ticker-wrapper [class*="tradingview"],
+      .gold-ticker-wrapper [class*="tv-"],
+      .gold-ticker-wrapper [class*="ticker-tape"] {
+        border-radius: 0px !important;
       }
 
-      /* About Us badge - clean, simple, replaces old years-badge styling */
-      .about-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.7rem;
-        background: #fefaf2;
-        padding: 0.45rem 1.4rem;
-        border-radius: 100px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #9e7b2b;
-        margin-bottom: 1.5rem;
-        width: fit-content;
-        border: 1px solid #ecdcaa;
-        letter-spacing: 0.01em;
+      /* Full width without any margin/padding leakage — ensures no surrounding gaps */
+      .gold-ticker-wrapper {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
       }
 
-      .brand-title {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: #1f2a3e;
-      }
-
-      .brand-title span {
-        background: linear-gradient(135deg, #d4af37, #e9c15b);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .lead-description {
-        font-size: 1.05rem;
-        line-height: 1.45;
-        color: #1f2f3c;
-        font-weight: 500;
-        /* margin-bottom: 1rem; */
-      }
-
-      .description-text {
-        color: #2c3e50;
-        font-size: 0.95rem;
-        line-height: 1.55;
-        margin-bottom: 1rem;
-      }
-
-      /* Simple about section: just text + highlighted points (no card, no extra box) */
-      .about-simple {
-        margin: 0.75rem 0 1.25rem 0;
-      }
-
-      .about-simple p {
-        color: #2c3e50;
-        font-size: 0.95rem;
-        line-height: 1.55;
-        margin-bottom: 0.85rem;
-      }
-
-      .highlight-list {
-        list-style: none;
-        margin: 0.8rem 0 0.5rem 0;
+      /* Remove any possible bottom/top spacing that might be added by TradingView script after load */
+      .gold-ticker-wrapper > div {
+        display: block;
+        margin: 0;
         padding: 0;
       }
 
-      .highlight-list li {
-        margin-bottom: 0.6rem;
-        font-size: 0.92rem;
-        color: #2c3e50;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        line-height: 1.45;
-      }
-
-      .highlight-list li i {
-        color: #d4af37;
-        font-size: 0.85rem;
-        width: 1.3rem;
-        text-align: center;
-      }
-
-      .highlight-list li strong {
-        color: #1f2a3e;
-        font-weight: 700;
-      }
-      .highlight-list li p {
+      /* Extra hardening: no negative margins or inherited spacing */
+      html,
+      body {
         margin: 0;
+        padding: 0;
+        background-color: #0a0e17; /* dark cohesive background */
       }
 
-      .telegram-clean {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-        background: #fefaf2;
-        border-radius: 1.2rem;
-        padding: 0.8rem 1.2rem 0.8rem 1.5rem;
-        border: 1px solid #e5ce8a;
-        margin-top: 0.4rem;
-      }
-
-      .telegram-left {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
-
-      .telegram-left i {
-        font-size: 2rem;
-        color: #27a6e5;
-      }
-
-      .telegram-left div strong {
-        font-size: 0.95rem;
-        color: #1e2a36;
-      }
-
-      .telegram-left div small {
-        font-size: 0.68rem;
-        color: #6c7a8e;
-      }
-
-      .btn-gold {
-        background: linear-gradient(135deg, #d4af37, #e9c15b);
-        border: none;
-        padding: 0.6rem 1.8rem;
-        border-radius: 2.5rem;
-        font-weight: 700;
-        font-size: 0.8rem;
-        color: #1f2a2e;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        transition: 0.2s;
-        cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      }
-
-      .btn-gold:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 20px rgba(212, 175, 55, 0.3);
-        background: #000000d2;
-        color: #e0ba48;
-      }
-
-      hr {
-        margin: 1rem 0 0.6rem;
-        border: none;
+      /* --- LAYOUT: ticker sits flush with no surrounding whitespace --- */
+      /* Optional spacer element is completely independent, does NOT affect ticker margins */
+      .demo-spacer {
         height: 1px;
-        background: linear-gradient(90deg, #ece2ca, #d4af37, #ece2ca);
+        background: transparent;
+        margin: 0;
+        padding: 0;
       }
 
-      .footer-note {
-        font-size: 0.65rem;
-        text-align: center;
-        margin-top: 0.8rem;
-        color: #8b9ab0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+      /* Additional override for any hidden borders that might appear on hover or dynamic injection */
+      .gold-ticker-wrapper .tradingview-widget-container iframe,
+      .gold-ticker-wrapper .tradingview-widget-container > div {
+        border: none !important;
+        outline: none !important;
       }
 
-      /* ========= RESPONSIVE: first content then chart on mobile, fix overflow ========= */
-      @media (max-width: 1000px) {
-        .premium-layout {
-          flex-direction: column;
+      /* Responsive improvements: ticker tape will adapt to small screens smoothly (no overflow issues) */
+      @media (max-width: 640px) {
+        .gold-ticker-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
         }
-        .chart-side {
-          order: 2;
-          flex: auto;
-          padding: 1.5rem;
-          width: 100%;
-        }
-        .content-side {
-          order: 1;
-          flex: auto;
-          margin: 1.5rem 1.8rem;
-          padding: 0.2rem 0 0.5rem 0;
-          width: auto;
-        }
-        .brand-title {
-          font-size: 2.3rem;
-        }
-        .market-box {
-          padding: 0.5rem;
-        }
-        .tradingview-widget-container iframe {
-          min-height: 380px !important;
-        }
-        .tradingview-widget-container {
-          height: 400px !important;
+        /* Ensure ticker content doesn't break, TradingView's adaptive mode handles it, but we guarantee scroll */
+        .gold-ticker-wrapper .tradingview-widget-container {
+          min-width: 100%;
         }
       }
 
-      @media (max-width: 680px) {
-        .content-side {
-          margin: 1rem 1.2rem;
-        }
-        .telegram-clean {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .btn-gold {
-          width: 100%;
-          justify-content: center;
-        }
-        .brand-title {
-          font-size: 1.9rem;
-        }
-        .tradingview-widget-container iframe {
-          min-height: 400px !important;
-        }
-        .chart-side {
-          padding: 1rem;
-        }
-        .about-badge {
-          font-size: 0.68rem;
-          padding: 0.4rem 1.2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .content-side {
-          margin: 0.8rem 1rem;
-          padding: 30px 20px;
-        }
-        .brand-title {
-          font-size: 1.7rem;
-        }
-        .tradingview-widget-container iframe {
-          min-height: 320px !important;
-        }
-        .highlight-list li {
-          font-size: 0.85rem;
-          gap: 0.5rem;
-        }
-        .highlight-list li i {
-          font-size: 0.75rem;
-          width: 1.1rem;
-        }
-      }
-
-      /* smooth scrollbar */
-      .content-side::-webkit-scrollbar {
-        width: 4px;
-      }
-      .content-side::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-      }
-      .content-side::-webkit-scrollbar-thumb {
-        background: #d4af37;
-        border-radius: 10px;
+      /* Remove any possible box-shadow or outline that might be injected by third party */
+      .gold-ticker-wrapper,
+      .gold-ticker-wrapper div,
+      .gold-ticker-wrapper section {
+        box-shadow: none !important;
+        text-shadow: none !important;
       }
     </style>
   </head>
   <body>
-    <div class="premium-layout" id="About">
-      <!-- LEFT SIDE: clean TradingView widget with proper symbols & dynamic height fix -->
-      <div class="chart-side">
-        <div class="market-box">
-          <div class="tradingview-widget-container">
-            <!-- TradingView Widget will be embedded here -->
-            <div class="tradingview-widget-container__widget"></div>
-            <!-- Load script with symbol overview widget - using correct parameters to avoid rendering issues -->
-            <script
-              type="text/javascript"
-              src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
-              async
-            >
+    <!-- 
+    GOLD TICKER – FULL WIDTH, ZERO BORDER RADIUS, DARK THEME, NO EXTERNAL PADDING/MARGIN.
+    The wrapper ensures zero spacing around the widget. 
+    'isTransparent': true allows background of body (dark) to be visible, 
+    but the widget uses 'colorTheme': 'dark' for text and symbols.
+  -->
+    <div class="gold-ticker-wrapper" id="goldTickerRoot">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script
+          type="text/javascript"
+          src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+          async
+        >
+          {
+            "symbols": [
               {
-                "lineWidth": 2,
-                "chartType": "area",
-                "backgroundColor": "#0b1120",
-                "widgetFontColor": "#DBDBDB",
-                "colorTheme": "dark",
-                "autosize": true,
-                "width": "100%",
-                "height": "500",
-                "symbols": [
-                  ["Gold", "OANDA:XAUUSD|1D"],
-                  ["Bitcoin", "BITSTAMP:BTCUSD|1D"],
-                  ["Crude Oil", "TVC:USOIL|1D"]
-                ]
+                "proName": "OANDA:XAUUSD",
+                "title": "Gold (XAU/USD)"
+              },
+              {
+                "proName": "FX_IDC:USDINR",
+                "title": "USD / INR"
+              },
+              {
+                "proName": "OANDA:EURUSD",
+                "title": "EUR / USD"
+              },
+              {
+                "proName": "OANDA:GBPUSD",
+                "title": "GBP / USD"
               }
-            </script>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE: main content area, simplified with badge "about us" + simple text and highlighted points, no instrument rows -->
-      <div class="content-side">
-        <!-- About Us Badge - clean badge style replacing years-badge -->
-        <div class="about-badge">
-          <i class="fas fa-users gold-accent"></i> About Us · Founded on
-          Discipline & Price Action
-        </div>
-
-        <h1 class="brand-title">Gujju <span>Forex Wala</span></h1>
-
-        <div class="lead-description">
-          Professional trading & market analysis — built on
-          <span class="gold-gradient-text">experience, discipline</span>
-          and deep global market understanding.
-        </div>
-
-        <!-- Simple About Section: just text + clean highlighted points (no extra card, no boxes) -->
-        <div class="about-simple">
-          <p>
-            With
-            <strong class="gold-accent">8+ years of active involvement</strong>
-            in Forex and Cryptocurrency trading, Gujju Forex Wala has grown
-            alongside evolving market conditions, Trader psychology, and
-            Real-world price behavior. Our approach is rooted in
-            <strong>price action mastery</strong> — not lagging indicators or
-            theoretical fluff.
-          </p>
-
-          <ul class="highlight-list">
-            <li>
-              <i class="fas fa-chart-line"></i>
-              <p>
-                <strong>Live market execution</strong> — every strategy tested
-                in Real Volatility
-              </p>
-            </li>
-            <li>
-              <i class="fas fa-brain"></i>
-              <p>
-                <strong>Disciplined frameworks</strong> focused on supply/demand
-                & order flow
-              </p>
-            </li>
-            <li>
-              <i class="fas fa-coins"></i>
-              <p>
-                <strong>Specialized in Gold (XAUUSD) & Bitcoin (BTC)</strong>
-                — highest liquidity assets
-              </p>
-            </li>
-            <li>
-              <i class="fas fa-microchip"></i>
-              <p>
-                <strong>Hand-crafted trading systems</strong> refined over
-                thousands of hours
-              </p>
-            </li>
-          </ul>
-
-          <p>
-            We don't chase hype. Our edge comes from
-            <strong
-              >clean Price Action, Risk-Conscious Psychology, and Continuous
-              Adaptation</strong
-            >
-            to global macro trends. Whether it's the safe-haven dynamics of Gold
-            or the volatility cycles of Bitcoin, our analysis delivers precision
-            where it matters.
-          </p>
-        </div>
-
-        <!-- Telegram CTA - clean and minimal -->
-        <div class="telegram-clean">
-          <div class="telegram-left">
-            <i class="fab fa-telegram-plane"></i>
-            <div>
-              <strong>Join Telegram Channel</strong><br />
-              <small
-                >Real-time insights · Trade setups · Market psychology & live
-                analysis</small
-              >
-            </div>
-          </div>
-          <a
-            href="https://t.me/gujjuforexwala"
-            class="btn-gold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-telegram"></i> Join Telegram
-          </a>
-        </div>
-
-        <!-- <hr /> -->
-        <!-- <div class="footer-note">
-          <i class="fas fa-chart-line gold-accent"></i> Gujju Forex Wala — where
-          discipline meets price action. Global markets, precision trading.
-        </div> -->
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "colorTheme": "dark",
+            "locale": "en"
+          }
+        </script>
       </div>
     </div>
 
-    <!-- Advanced script to enforce proper widget rendering, fix height/width issues, and avoid overflow -->
+    <!-- 
+    NO EXTRA MARGINS OR PADDING BELOW TICKER.
+    The spacer is optional but demonstrates that no default gap exists.
+    If you see any space, it's coming from external elements, not the ticker itself.
+    This block is just to show separation but has ZERO effect on ticker's bottom margin.
+  -->
+    <div
+      style="height: 0; margin: 0; padding: 0; background: transparent"
+    ></div>
+
+    <!-- 
+    ADDITIONAL SAFETY: Observe DOM to ensure that any iframe or injected element 
+    does not add margin/padding after loading. Also applies border-radius reset repeatedly.
+  -->
     <script>
-      (function fixTradingViewAndLayout() {
-        // Ensure that the TradingView widget iframe gets proper dimensions without clipping
-        function enforceWidgetDimensions() {
-          const containers = document.querySelectorAll(
+      (function () {
+        "use strict";
+
+        // Function to enforce zero border-radius on all elements inside ticker wrapper (dynamic protection)
+        function enforceZeroBorderRadius() {
+          const wrapper = document.getElementById("goldTickerRoot");
+          if (!wrapper) return;
+
+          // Recursively ensure every child and the wrapper itself has borderRadius = 0px
+          const allElements = wrapper.querySelectorAll("*");
+          allElements.forEach((el) => {
+            if (el.style) {
+              el.style.borderRadius = "0px";
+              el.style.borderTopLeftRadius = "0px";
+              el.style.borderTopRightRadius = "0px";
+              el.style.borderBottomLeftRadius = "0px";
+              el.style.borderBottomRightRadius = "0px";
+            }
+            // Also set via inline style to override any scripted rounding
+            el.style.setProperty("border-radius", "0px", "important");
+            el.style.setProperty("border-top-left-radius", "0px", "important");
+            el.style.setProperty("border-top-right-radius", "0px", "important");
+            el.style.setProperty(
+              "border-bottom-left-radius",
+              "0px",
+              "important",
+            );
+            el.style.setProperty(
+              "border-bottom-right-radius",
+              "0px",
+              "important",
+            );
+          });
+
+          // wrapper itself
+          wrapper.style.borderRadius = "0px";
+          wrapper.style.setProperty("border-radius", "0px", "important");
+        }
+
+        // Remove any margin/padding that might appear on widget container after load
+        function removeExtraSpacing() {
+          const wrapper = document.getElementById("goldTickerRoot");
+          if (!wrapper) return;
+
+          // Force reset of all potential margin/padding on wrapper and children
+          wrapper.style.margin = "0";
+          wrapper.style.padding = "0";
+          const container = wrapper.querySelector(
             ".tradingview-widget-container",
           );
-          if (!containers.length) return;
+          if (container) {
+            container.style.margin = "0";
+            container.style.padding = "0";
+          }
+          const widgetDiv = wrapper.querySelector(
+            ".tradingview-widget-container__widget",
+          );
+          if (widgetDiv) {
+            widgetDiv.style.margin = "0";
+            widgetDiv.style.padding = "0";
+          }
 
-          containers.forEach((container) => {
-            // Find iframe inside container (TradingView injects it after script execution)
-            const iframe = container.querySelector("iframe");
-            if (!iframe) return;
-
-            // Remove any conflicting inline styles that cause clipping
-            iframe.style.width = "100%";
+          // Additionally, if any iframe appears, set its style to block and remove extra space
+          const iframes = wrapper.querySelectorAll("iframe");
+          iframes.forEach((iframe) => {
+            iframe.style.margin = "0";
+            iframe.style.padding = "0";
             iframe.style.display = "block";
-
-            // Set adaptive min-height based on screen size but ensure enough space
-            let minH = 440;
-            if (window.innerWidth <= 480) minH = 320;
-            else if (window.innerWidth <= 768) minH = 380;
-            else if (window.innerWidth <= 1000) minH = 420;
-            else minH = 480;
-
-            iframe.style.minHeight = minH + "px";
-            iframe.style.height = "auto";
-            // force a good height for better visibility
-            iframe.style.height = minH + "px";
-
-            // Also ensure container itself has no overflow issues
-            container.style.overflow = "hidden";
-            container.style.borderRadius = "1rem";
-
-            // Iframe border-radius harmony
-            iframe.style.borderRadius = "0.85rem";
+            iframe.style.verticalAlign = "bottom";
+            iframe.style.border = "none";
           });
         }
 
-        // Initial attempt
-        function waitForWidgetAndFix() {
-          enforceWidgetDimensions();
-          // Additional watch for dynamic insertion: TradingView sometimes rebuilds
+        // MutationObserver to watch for dynamically injected nodes (TradingView often adds extra containers)
+        function observeForDynamicChanges() {
+          const wrapper = document.getElementById("goldTickerRoot");
+          if (!wrapper) return;
+
           const observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-              if (mutation.addedNodes.length) {
-                // check if iframe got added/updated
-                const iframeExists = document.querySelector(
-                  ".tradingview-widget-container iframe",
-                );
-                if (iframeExists) {
-                  enforceWidgetDimensions();
+            let needsUpdate = false;
+            mutations.forEach((mutation) => {
+              if (
+                mutation.type === "childList" ||
+                mutation.type === "attributes"
+              ) {
+                needsUpdate = true;
+              }
+            });
+            if (needsUpdate) {
+              enforceZeroBorderRadius();
+              removeExtraSpacing();
+              // Also ensure any new iframe or div doesn't add border radius and clears margin
+              const allDivs = wrapper.querySelectorAll(
+                "div, iframe, section, article",
+              );
+              allDivs.forEach((el) => {
+                if (el.style) {
+                  el.style.margin = "0";
+                  el.style.padding = "0";
+                  el.style.borderRadius = "0px";
                 }
-              }
-            });
-          });
-
-          const chartSide = document.querySelector(".chart-side");
-          if (chartSide) {
-            observer.observe(chartSide, { childList: true, subtree: true });
-          }
-          // also observe document body for safe measure
-          observer.observe(document.body, {
-            childList: true,
-            subtree: false,
-          });
-        }
-
-        // Run on load, resize, and after TradingView script loads (delayed)
-        window.addEventListener("load", function () {
-          setTimeout(enforceWidgetDimensions, 100);
-          setTimeout(enforceWidgetDimensions, 500);
-          setTimeout(enforceWidgetDimensions, 1200);
-        });
-
-        window.addEventListener("resize", function () {
-          enforceWidgetDimensions();
-        });
-
-        // Also capture if TradingView widget re-renders after interactions
-        setInterval(function () {
-          const iframes = document.querySelectorAll(
-            ".tradingview-widget-container iframe",
-          );
-          if (iframes.length) {
-            let needsFix = false;
-            iframes.forEach((iframe) => {
-              const computedHeight = iframe.clientHeight;
-              if (computedHeight < 250 && window.innerWidth > 600) {
-                needsFix = true;
-              }
-              // ensure width consistency
-              if (iframe.style.width !== "100%") {
-                iframe.style.width = "100%";
-              }
-            });
-            if (needsFix) enforceWidgetDimensions();
-          }
-        }, 1500);
-
-        waitForWidgetAndFix();
-
-        // additional fix: remove any residual inline height from TradingView default that breaks layout
-        function finalStyleOverride() {
-          const style = document.createElement("style");
-          style.textContent = `
-        .tradingview-widget-container iframe {
-          max-width: 100% !important;
-          width: 100% !important;
-          min-width: 100% !important;
-        }
-        .market-box {
-          overflow: hidden;
-        }
-      `;
-          document.head.appendChild(style);
-        }
-        finalStyleOverride();
-      })();
-
-      // Secondary: ensure the widget container gets proper aspect ratio and no horizontal scroll
-      (function fixParentOverflow() {
-        const marketBoxes = document.querySelectorAll(".market-box");
-        marketBoxes.forEach((box) => {
-          box.style.overflowX = "hidden";
-        });
-        const chartSideElem = document.querySelector(".chart-side");
-        if (chartSideElem) chartSideElem.style.overflowX = "hidden";
-        const premiumLayout = document.querySelector(".premium-layout");
-        if (premiumLayout) premiumLayout.style.overflowX = "hidden";
-      })();
-
-      // manual hotfix for any embedded script missing params: force re-run of style after widget fully loads
-      window.addEventListener("load", function () {
-        const allIframes = document.querySelectorAll("iframe");
-        allIframes.forEach((iframe) => {
-          if (iframe.src && iframe.src.includes("tradingview")) {
-            iframe.setAttribute("scrolling", "no");
-            iframe.style.overflow = "hidden";
-            // set explicit min height for stability
-            if (window.innerWidth <= 680) {
-              iframe.style.minHeight = "380px";
-              iframe.style.height = "380px";
-            } else {
-              iframe.style.minHeight = "460px";
-              iframe.style.height = "460px";
+              });
             }
-          }
-        });
-        // also for very narrow screens
-        if (window.innerWidth <= 480) {
-          const widgets = document.querySelectorAll(
-            ".tradingview-widget-container iframe",
-          );
-          widgets.forEach((w) => {
-            w.style.minHeight = "300px";
-            w.style.height = "300px";
           });
+
+          observer.observe(wrapper, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ["style", "class"],
+          });
+
+          // Run once after script loads
+          setTimeout(() => {
+            enforceZeroBorderRadius();
+            removeExtraSpacing();
+          }, 100);
         }
-      });
+
+        // Also run after window fully loads, including all TradingView scripts
+        window.addEventListener("load", function () {
+          enforceZeroBorderRadius();
+          removeExtraSpacing();
+
+          // Extra passes because TradingView injects progressively
+          setTimeout(() => {
+            enforceZeroBorderRadius();
+            removeExtraSpacing();
+          }, 300);
+
+          setTimeout(() => {
+            enforceZeroBorderRadius();
+            removeExtraSpacing();
+            // Additional safety: find any possible stray elements that add bottom margin
+            const wrapper = document.getElementById("goldTickerRoot");
+            if (wrapper && wrapper.parentElement) {
+              // ensure no parent gap, but not modifying outer layout aggressively, just ticker boundaries
+              wrapper.style.marginBottom = "0";
+              wrapper.style.marginTop = "0";
+            }
+          }, 800);
+
+          observeForDynamicChanges();
+        });
+
+        // Edge case: if TradingView loads faster, run immediately as well
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", () => {
+            enforceZeroBorderRadius();
+            removeExtraSpacing();
+          });
+        } else {
+          enforceZeroBorderRadius();
+          removeExtraSpacing();
+        }
+      })();
     </script>
+
+    <!-- 
+    Additional inline style guard: any style that might leak border radius from host page
+    will be overwritten. This ensures that even if external CSS tries to add rounding,
+    the ticker remains completely sharp, full width.
+  -->
+    <style>
+      /* ULTIMATE OVERRIDE: high specificity to kill border radius anywhere inside ticker */
+      div.gold-ticker-wrapper,
+      div.gold-ticker-wrapper *,
+      div.gold-ticker-wrapper *::before,
+      div.gold-ticker-wrapper *::after,
+      .gold-ticker-wrapper > .tradingview-widget-container,
+      .gold-ticker-wrapper .tradingview-widget-container > div,
+      .gold-ticker-wrapper iframe,
+      .gold-ticker-wrapper object,
+      .gold-ticker-wrapper embed {
+        border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+
+      /* Guarantee that wrapper itself has no negative or positive margins that create gap */
+      .gold-ticker-wrapper {
+        margin-block-start: 0em !important;
+        margin-block-end: 0em !important;
+        margin-inline-start: 0px !important;
+        margin-inline-end: 0px !important;
+        display: block;
+        line-height: 0;
+      }
+
+      /* Remove any possible bottom space from ticker container sibling effect */
+      body > .gold-ticker-wrapper {
+        margin-bottom: 0 !important;
+      }
+
+      /* also avoid any default margin on TradingView generated ticker list */
+      [class*="tv-ticker"],
+      [class*="ticker"],
+      [class*="tape"] {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Responsive touch: horizontal scroll only if needed, but ticker is adaptive */
+      @media (max-width: 768px) {
+        .gold-ticker-wrapper {
+          overflow-x: auto;
+          white-space: normal;
+        }
+        .gold-ticker-wrapper .tradingview-widget-container {
+          min-width: 600px; /* ensures ticker content has enough room but adapts via wrapper overflow */
+        }
+      }
+
+      /* For larger screens, force full width no overflow */
+      @media (min-width: 769px) {
+        .gold-ticker-wrapper {
+          overflow-x: visible;
+        }
+      }
+    </style>
+
+    <!-- 
+    FINAL VERIFICATION: If you notice any gap below the ticker, it is NOT from the widget or this code.
+    The structure has zero margins and zero paddings. The background of body is dark, no extra elements.
+    Any extra spacing would come from external page layout (like additional containers or line-height from body).
+    We reset body line-height only for ticker parent but full control.
+  -->
+    <div style="display: none" aria-hidden="true">
+      Gold Ticker — full width, zero border radius, dark theme, no gaps
+    </div>
   </body>
 </html>
