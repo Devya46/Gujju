@@ -57,7 +57,11 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(18, 25, 30, 0.92);
+            background: radial-gradient(
+              at center center,
+              #3a3722 0%,
+              #000000 76%
+            );
             backdrop-filter: blur(12px);
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             padding: 0.9rem 2rem;
@@ -7929,12 +7933,13 @@
           <!-- DISCLAIMER -->
           <div class="ggf-disclaimer">
             <p>
-              Gujju Forex provides educational trading content only and does not
-              offer financial advice or profit guarantees. Trading in Forex,
-              Gold, and CFDs involves high risk and may lead to losses. All
-              signals and analysis are for learning purposes, and users are
-              responsible for their own decisions. By using our services, you
-              agree that Gujju Forex is not liable for any losses.
+              Gujju Forex Provides Educational Trading Content Only and does Not
+              Offer Financial Advice Or Profit Guarantees. Trading in Forex,
+              Gold, And Cfds involves High Risk And May Lead to Losses. All
+              Signals and Analysis are For Learning Purposes, and Users Are
+              Responsible for their own Decisions. <br />
+              By Using our Services, You Agree that Gujju Forex is not Liable
+              for Any Losses.
             </p>
           </div>
 
@@ -7972,7 +7977,7 @@
             margin-bottom: 20px;
           }
           .ggf-social i {
-            font-size: 17px;
+            font-size: 19px;
           }
           .ggf-social a {
             display: inline-flex;
@@ -7994,8 +7999,10 @@
           }
 
           .ggf-col h4 {
-            color: #fff;
+            color: #c6a230;
             margin-bottom: 15px;
+            font-weight: 800;
+            font-size: 15px;
           }
 
           .ggf-col ul {
@@ -8005,6 +8012,13 @@
 
           .ggf-col ul li {
             margin-bottom: 10px;
+            font-size: 15px;
+            /* font-weight: 600; */
+          }
+          .ggf-contact li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            font-weight: 600 !important;
           }
 
           .ggf-col ul li a {
@@ -8015,11 +8029,12 @@
 
           .ggf-col ul li a:hover {
             color: #c6a230;
-            padding-left: 5px;
+            font-size: 15px;
           }
 
           .ggf-contact li i {
-            margin-right: 8px;
+            margin-right: 4px;
+            color: #c6a230;
           }
 
           .ggf-btn {
@@ -8066,6 +8081,7 @@
             margin: auto;
             font-size: 13px;
             color: #888;
+            font-weight: 700;
           }
 
           /* RESPONSIVE */
@@ -8081,6 +8097,9 @@
               grid-template-columns: 0.8fr 1.2fr; /* 👈 Company small, Contact bigger */
               gap: 20px;
               text-align: left;
+            }
+            .ggf-social i {
+              color: #c6a230;
             }
 
             /* Logo full width */
